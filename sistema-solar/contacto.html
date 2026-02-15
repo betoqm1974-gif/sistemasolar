@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <title>Sistema Solar</title>
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" href="favicon.png">
+        <meta name="description" content="Créditos e fontes (NASA/JPL, vídeos e imagens) do site do Sistema Solar." />
+        <link rel="stylesheet" href="styles.css?v=211" />
+</head>
+<body>
+        <a class="skip-link" href="#conteudo">Saltar para o conteúdo</a>
+        <header class="header">
+        <div class="wrap nav">
+        <a class="brand" href="index.html" aria-label="Início">
+        <img src="images/logo.svg" alt="" aria-hidden="true" />
+        <span class="brand-text">Sistema Solar</span>
+      </a>
+        
+
+
+
+
+<nav aria-label="Navegação" class="main-nav">
+  <a href="index.html">Início</a>
+  <span class="sep" aria-hidden="true">|</span>
+  <a href="planetas.html">Planetas</a>
+  <span class="sep" aria-hidden="true">|</span>
+  <a href="multimedia.html">Multimédia</a>
+  <span class="sep" aria-hidden="true">|</span>
+  <a href="fontes.html">Fontes</a>
+  <span class="sep" aria-hidden="true">|</span>
+  <a href="contacto.html">Contacto</a>
+  <span class="sep" aria-hidden="true">|</span>
+  <a href="acessibilidade.html">Acessibilidade</a>
+</nav>
+
+
+<div class="controls-row"><button type="button" class="btn" id="ttsToggle" aria-pressed="true" aria-label="Desativar leitura em voz">Leitura: ligada</button>
+      <span class="sep" aria-hidden="true">|</span>
+      <div id="fontControls" class="font-controls" role="group" aria-label="Tamanho do texto">
+  <button type="button" class="btn" data-font="1" aria-pressed="true" aria-label="Texto normal">A</button>
+  <button type="button" class="btn" data-font="2" aria-pressed="false" aria-label="Texto grande">AA</button>
+  <button type="button" class="btn" data-font="3" aria-pressed="false" aria-label="Texto muito grande">AAA</button>
+</div>
+</div>
+
+
+
+</div>
+
+        
+        
+        </div>
+        </header>
+        
+
+<main id="conteudo" class="container">
+  <h1>Contacto</h1>
+  <p>Envie a sua mensagem diretamente através do formulário (sem abrir o programa de email).</p>
+
+  <form id="contactForm" class="contact-form" novalidate>
+    <label for="nome"><strong>Nome</strong></label>
+    <input id="nome" name="name" type="text" autocomplete="name" required>
+
+    <label for="email"><strong>Email</strong></label>
+    <input id="email" name="email" type="email" autocomplete="email" required>
+
+    <label for="assunto"><strong>Assunto</strong></label>
+    <input id="assunto" name="subject" type="text" required>
+
+    <label for="mensagem"><strong>Mensagem</strong></label>
+    <textarea id="mensagem" name="message" rows="7" required></textarea>
+    <p class="small"><button type="button" class="btn" id="dictateBtn">Ditado</button> <span id="dictateStatus" class="small" aria-live="polite"></span></p>
+
+    <div class="form-actions">
+      <button type="submit" class="btn">Enviar</button>
+      <button type="button" class="btn" data-speak-female="contactAudio">Audiodescrição</button>
+    </div>
+
+    <div id="contactAudio" class="sr-only">
+      Formulário de contacto. Indique o seu nome, email, assunto e mensagem. Carregue em Enviar para enviar diretamente.
+    </div>
+
+    <p class="small" id="contactStatus" aria-live="polite"></p>
+  </form>
+</main>
+
+
+        
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-inner">
+    <div>Manuel Morais © 2026 - Sistema Solar</div>
+    <div>Conteúdos Digitais e Páginas Web Acessíveis (3ª Edição)</div>
+    <div>SKILLS4Digital (2024-26)</div>
+  </div>
+</footer>
+
+  <script src="modal.js"></script>
+  <script src="speech.js"></script>
+  <script src="click-speak.js?v=211"></script>
+  <script src="hover-speak.js?v=211"></script>
+  <script src="font-size.js"></script>
+  <script src="contacto.js"></script>
+  <script src="read-buttons.js?v=211"></script>
+  <script src="menu-tts.js"></script>
+  <script src="static-read.js"></script>
+  <script src="ui-guards.js"></script>
+</body>
+</html>

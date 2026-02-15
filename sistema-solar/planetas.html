@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+          <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary">
+  <meta name="readability" content="true">
+<meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <title>Sistema Solar</title>
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" href="favicon.png">
+        <meta name="description" content="Lista acessível de planetas com curiosidades e imagens reais da NASA." />
+        <link rel="stylesheet" href="styles.css?v=211" />
+</head>
+<body>
+        <a class="skip-link" href="#mainContent">Saltar para o conteúdo</a>
+        <header class="header">
+        <div class="wrap nav">
+        <a class="brand" href="index.html" aria-label="Início">
+        <img src="images/logo.svg" alt="" aria-hidden="true" />
+        <span class="brand-text">Sistema Solar</span>
+      </a>
+        
+
+
+
+
+<nav aria-label="Navegação" class="main-nav">
+  <a href="index.html">Início</a>
+  <span class="sep" aria-hidden="true">|</span>
+  <a href="planetas.html">Planetas</a>
+  <span class="sep" aria-hidden="true">|</span>
+  <a href="multimedia.html">Multimédia</a>
+  <span class="sep" aria-hidden="true">|</span>
+  <a href="fontes.html">Fontes</a>
+  <span class="sep" aria-hidden="true">|</span>
+  <a href="contacto.html">Contacto</a>
+  <span class="sep" aria-hidden="true">|</span>
+  <a href="acessibilidade.html">Acessibilidade</a>
+</nav>
+
+
+<div class="controls-row"><button type="button" class="btn" id="ttsToggle" aria-pressed="true" aria-label="Desativar leitura em voz">Leitura: ligada</button>
+      <span class="sep" aria-hidden="true">|</span>
+      <div id="fontControls" class="font-controls" role="group" aria-label="Tamanho do texto">
+  <button type="button" class="btn" data-font="1" aria-pressed="true" aria-label="Texto normal">A</button>
+  <button type="button" class="btn" data-font="2" aria-pressed="false" aria-label="Texto grande">AA</button>
+  <button type="button" class="btn" data-font="3" aria-pressed="false" aria-label="Texto muito grande">AAA</button>
+</div>
+</div>
+
+
+
+</div>
+
+        
+        
+        </div>
+        </header>
+        <main id="mainContent" class="container">
+  <article class="reader-article" role="article" itemprop="articleBody">
+
+        <div class="title-row">
+  <h1 id="planetasTitle">Planetas</h1></div>
+<p id="planetasIntro" class="no-read">Filtre por tipo e pesquisa por palavras. Exemplo: anéis, tempestade, metano.</p>
+        <section class="controls planet-controls" aria-label="Filtros">
+        <div style="min-width:240px">
+        <label for="tipo">Filtrar por tipo</label>
+        <select id="tipo">
+        <option value="todos">Todos</option>
+        <option value="Rochoso">Rochoso</option>
+        <option value="Gigante gasoso">Gigante gasoso</option>
+        <option value="Gigante gelado">Gigante gelado</option>
+        </select>
+        </div>
+        <div style="min-width:260px; flex:1">
+        <label for="q">Pesquisar</label>
+        <input id="q" type="search" placeholder="Ex.: Marte, anéis, tempestade…" />
+        </div>
+        <div style="min-width:160px; display:flex; align-items:flex-end">
+          <button id="clearFilters" class="btn say" data-say="Limpar filtros" type="button">Limpar</button>
+        </div>
+        <div style="min-width:220px">
+        <p id="live" class="status no-read">A mostrar 8 planetas.</p>
+        </div>
+        </section>
+        <section aria-label="Lista de planetas">
+        <div id="lista" class="grid planets-grid" role="list"></div>
+        </section>
+        
+  </article>
+</main>
+        
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-inner">
+    <div>Manuel Morais © 2026 - Sistema Solar</div>
+    <div>Conteúdos Digitais e Páginas Web Acessíveis (3ª Edição)</div>
+    <div>SKILLS4Digital (2024-26)</div>
+  </div>
+</footer>
+
+        <script src="data/planetas-data.js"></script>
+        <script src="planetas-page.js"></script>
+  <script src="modal.js"></script>
+  <script src="speech.js"></script>
+  <script src="click-speak.js?v=211"></script>
+  <script src="hover-speak.js?v=211"></script>
+  <script src="font-size.js"></script>
+  <script src="read-buttons.js?v=211"></script>
+  <script src="menu-tts.js"></script>
+  <script src="static-read.js"></script>
+  <script src="ui-guards.js"></script>
+</body>
+</html>
