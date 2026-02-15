@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html lang="pt-PT">
+<head>
+<meta content="no-cache, no-store, must-revalidate" http-equiv="Cache-Control"/>
+<meta content="no-cache" http-equiv="Pragma"/>
+<meta content="0" http-equiv="Expires"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Sistema Solar</title>
+<link href="favicon.ico" rel="icon" sizes="any"/>
+<link href="favicon.png" rel="icon" type="image/png"/>
+<meta content="Página de detalhe do planeta com curiosidades e imagem real da NASA." name="description"/>
+<link href="styles.css?v=223" rel="stylesheet"/>
+</head>
+<body>
+<a class="skip-link" href="#conteudo">Saltar para o conteúdo</a>
+<header class="header">
+<div class="wrap nav">
+<a aria-label="Início" class="brand" href="index.html">
+<img alt="" aria-hidden="true" src="images/logo.svg"/>
+<span class="brand-text">Sistema Solar</span>
+</a>
+<nav aria-label="Navegação" class="main-nav"><a href="index.html">Início</a> | <a href="planetas.html">Planetas</a> | <a href="multimedia.html">Multimédia</a> | <a href="acessibilidade.html">Acessibilidade</a> | <a href="contacto.html">Contacto</a></nav>
+<div class="controls-row"><button aria-label="Desativar leitura em voz" aria-pressed="true" class="btn" id="ttsToggle" type="button">Leitura: ligada</button>
+<span aria-hidden="true" class="sep">|</span>
+<div aria-label="Tamanho do texto" class="font-controls" id="fontControls" role="group">
+<button aria-label="Texto normal" aria-pressed="true" class="btn" data-font="1" type="button">A</button>
+<button aria-label="Texto grande" aria-pressed="false" class="btn" data-font="2" type="button">AA</button>
+<button aria-label="Texto muito grande" aria-pressed="false" class="btn" data-font="3" type="button">AAA</button>
+</div>
+</div>
+</div>
+</header>
+<main class="wrap" id="conteudo">
+<p><a class="btn" href="planetas.html">← Voltar à lista</a></p>
+<h1 id="planetTitle">Planeta</h1>
+<p class="small"><button class="btn" data-speak-target="planetTitle" type="button">Ouvir nome</button> <button class="btn" data-speak-target="planetType" type="button">Ouvir tipo</button></p>
+<section aria-label="Conteúdo do planeta" class="grid">
+<div class="card">
+<div class="pad">
+<span class="badge" id="planetType">Tipo</span>
+<h2>Curiosidades</h2>
+<p class="small"><button class="btn" data-speak-target="facts" type="button">Ouvir curiosidades</button></p>
+<ul id="facts"></ul>
+<p class="small">Navegação: <a href="#" id="prev">← anterior</a> | <a href="#" id="next">seguinte →</a></p>
+</div>
+</div>
+<div>
+<figure aria-label="Imagem do planeta" class="figure">
+<button class="imgpop" data-caption="Imagem real da NASA/JPL (ver créditos em " fontes")."="" type="button"><span class="sr-only">Abrir imagem em popup</span><button class="imgpop" data-caption="Imagem real da NASA/JPL (ver créditos em " fontes")."="" type="button"><span class="sr-only">Abrir imagem em popup</span><img alt="" id="planetImg" src=""/></button></button>
+<figcaption>Imagem real da NASA/JPL (ver créditos em "Fontes").</figcaption>
+</figure>
+</div>
+</section>
+</main>
+<footer class="site-footer" role="contentinfo">
+<div class="footer-inner">
+<div>Manuel Morais © 2026 - Sistema Solar</div>
+<div>Conteúdos Digitais e Páginas Web Acessíveis (3ª Edição)</div>
+<div>SKILLS4Digital (2024-26)</div>
+</div>
+</footer>
+<script src="data/planetas-data.js"></script>
+<script src="planeta-page.js"></script>
+<script src="modal.js"></script>
+<script src="speech.js"></script>
+<script src="click-speak.js?v=223"></script>
+<script src="hover-speak.js?v=223"></script>
+<script src="font-size.js"></script>
+<script src="read-buttons.js?v=223"></script>
+<script src="menu-tts.js"></script>
+<script src="static-read.js"></script>
+<script src="ui-guards.js"></script>
+</body>
+</html>

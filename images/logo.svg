@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220" role="img" aria-label="Logótipo do Sistema Solar">
+  <defs>
+    <radialGradient id="sun" cx="45%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#fff7b0"/>
+      <stop offset="45%" stop-color="#ffd35a"/>
+      <stop offset="85%" stop-color="#ff9a2e"/>
+      <stop offset="100%" stop-color="#d84a18"/>
+    </radialGradient>
+    <filter id="g" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <g fill="none" stroke="rgba(255,255,255,.65)" stroke-width="6">
+    <ellipse cx="110" cy="110" rx="92" ry="44" opacity=".28"/>
+    <ellipse cx="110" cy="110" rx="116" ry="56" opacity=".20"/>
+    <ellipse cx="110" cy="110" rx="70" ry="34" opacity=".36"/>
+  </g>
+
+  <circle cx="70" cy="112" r="34" fill="url(#sun)" filter="url(#g)"/>
+  <circle cx="156" cy="78" r="9" fill="rgba(160,220,255,.95)"/>
+  <circle cx="136" cy="146" r="7" fill="rgba(170,255,210,.95)"/>
+  <circle cx="176" cy="118" r="6" fill="rgba(255,200,230,.95)"/>
+</svg>

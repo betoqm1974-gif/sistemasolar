@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html lang="pt-PT">
+<head>
+<meta content="no-cache, no-store, must-revalidate" http-equiv="Cache-Control"/>
+<meta content="no-cache" http-equiv="Pragma"/>
+<meta content="0" http-equiv="Expires"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Sistema Solar</title>
+<link href="favicon.ico" rel="icon" sizes="any"/>
+<link href="favicon.png" rel="icon" type="image/png"/>
+<meta content="Créditos e fontes (NASA/JPL, vídeos e imagens) do site do Sistema Solar." name="description"/>
+<link href="styles.css?v=223" rel="stylesheet"/>
+</head>
+<body class="page-acessibilidade">
+<a class="skip-link" href="#conteudo">Saltar para o conteúdo</a>
+<header class="header">
+<div class="wrap nav">
+<a aria-label="Início" class="brand" href="index.html">
+<img alt="" aria-hidden="true" src="images/logo.svg"/>
+<span class="brand-text">Sistema Solar</span>
+</a>
+<nav aria-label="Navegação" class="main-nav"><a href="index.html">Início</a> | <a href="planetas.html">Planetas</a> | <a href="multimedia.html">Multimédia</a> | <a href="acessibilidade.html">Acessibilidade</a> | <a href="contacto.html">Contacto</a></nav>
+<div class="controls-row"><button aria-label="Desativar leitura em voz" aria-pressed="true" class="btn" id="ttsToggle" type="button">Leitura: ligada</button>
+<span aria-hidden="true" class="sep">|</span>
+<div aria-label="Tamanho do texto" class="font-controls" id="fontControls" role="group">
+<button aria-label="Texto normal" aria-pressed="true" class="btn" data-font="1" type="button">A</button>
+<button aria-label="Texto grande" aria-pressed="false" class="btn" data-font="2" type="button">AA</button>
+<button aria-label="Texto muito grande" aria-pressed="false" class="btn" data-font="3" type="button">AAA</button>
+</div>
+</div>
+</div>
+</header>
+<main class="container" id="conteudo">
+<h1 class="no-read">Acessibilidade</h1>
+<p class="no-read small"><button class="btn" data-speak-female="accSummary" type="button">Audiodescrição</button></p>
+<div class="sr-only" id="accSummary">Página de acessibilidade. Explica como o site apoia pessoas com deficiência: navegação por teclado, leitor de ecrã, tamanho do texto em três níveis, popups com zoom e transcrições para vídeos.</div>
+<section>
+<p>Este site foi concebido para ser acessível a todas as pessoas, incluindo utilizadores com deficiência visual, auditiva, motora e cognitiva. Procuramos seguir as boas práticas das WCAG (níveis A/AA) e oferecer opções adicionais que melhoram a experiência para pessoas cegas ou com baixa visão.</p>
+</section>
+<section>
+<h2>Funcionalidades de acessibilidade</h2>
+<ul>
+<li><strong>Navegação por teclado</strong> (Tab/Shift+Tab) com foco visível.</li>
+<li><strong>Leitura em voz</strong>: botão "Leitura: ligada/desligada" e botões explícitos "Ouvir …" em conteúdos-chave.</li>
+<li><strong>Tamanho do texto</strong>: botões A / AA / AAA para aumentar a letra (a escolha fica memorizada).</li>
+<li><strong>Conteúdo estruturado</strong> com títulos e zonas semânticas (header/nav/main/footer).</li>
+<li><strong>Imagens com descrição</strong> e popups com controlo por teclado.</li>
+<li><strong>Zoom nas imagens</strong> no popup (− / 1× / + e Ctrl + roda do rato).</li>
+<li><strong>Vídeos com apoio</strong>: transcrição no site e tentativa de legendas quando disponíveis.</li>
+<li><strong>Atualizações anunciadas</strong> em listas filtradas (aria-live no contador de resultados).</li>
+<li><strong>"Saltar para o conteúdo"</strong> (skip link) para utilizadores de teclado/leitor de ecrã.</li>
+</ul>
+</section>
+<section>
+<h2>Como usar com leitor de ecrã</h2>
+<ul>
+<li>Use Tab para navegar pelos links e botões.</li>
+<li>Abra imagens em popup e use os botões de zoom quando necessário.</li>
+<li>Nos vídeos, utilize a transcrição e os botões "Ouvir transcrição", se preferir áudio.</li>
+<li>Se a leitura em voz não funcionar no seu browser, use um leitor de ecrã do sistema (NVDA/VoiceOver).</li>
+</ul>
+</section>
+<section>
+<h2>Contactos e melhorias</h2>
+<p class="no-read">Se encontrar alguma barreira de acessibilidade, agradecemos o seu contacto para melhorar o site. Pode descrever o problema, a página e o dispositivo/browser utilizado. Utilize a página contacto para o efeito.</p>
+<p class="small">Última atualização: 18-02-2026</p>
+</section>
+</main>
+<footer class="site-footer" role="contentinfo">
+<div class="footer-inner">
+<div>Manuel Morais © 2026 - Sistema Solar</div>
+<div>Conteúdos Digitais e Páginas Web Acessíveis (3ª Edição)</div>
+<div>SKILLS4Digital (2024-26)</div>
+</div>
+</footer>
+<script src="modal.js"></script>
+<script src="speech.js"></script>
+<script src="click-speak.js?v=223"></script>
+<script src="hover-speak.js?v=223"></script>
+<script src="font-size.js"></script>
+<script src="read-buttons.js?v=223"></script>
+<script src="menu-tts.js"></script>
+<script src="static-read.js"></script>
+<script src="ui-guards.js"></script>
+</body>
+</html>
