@@ -2139,3 +2139,122 @@ a.nav-home:hover .home-bg,a.nav-home:focus-visible .home-bg{fill:#FFFFFF}
 a.nav-home:hover .home-house,a.nav-home:focus-visible .home-house{fill:#FF9F1A}
 a.nav-home:hover .home-roof,a.nav-home:focus-visible .home-roof{stroke:#FF9F1A}
 a.nav-home:hover .home-door,a.nav-home:focus-visible .home-door{fill:#FFFFFF}
+
+/* FIX262: tooltip/balão no hover/focus (Home) */
+a.has-tooltip{
+  position: relative;
+}
+a.has-tooltip::after{
+  content: attr(data-tooltip);
+  position: absolute;
+  left: 50%;
+  top: -0.65rem;
+  transform: translate(-50%, -100%);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 0.3rem 0.5rem;
+  border-radius: 0.6rem;
+  background: rgba(0,0,0,0.78);
+  color: #fff;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 120ms ease, transform 120ms ease;
+  z-index: 9999;
+}
+a.has-tooltip::before{
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -0.35rem;
+  transform: translateX(-50%) rotate(45deg);
+  width: 0.55rem;
+  height: 0.55rem;
+  background: rgba(0,0,0,0.78);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 120ms ease;
+  z-index: 9998;
+}
+a.has-tooltip:hover::after,
+a.has-tooltip:focus-visible::after{
+  opacity: 1;
+  transform: translate(-50%, -110%);
+}
+a.has-tooltip:hover::before,
+a.has-tooltip:focus-visible::before{
+  opacity: 1;
+}
+/* em ecrãs tácteis, não forçar tooltip */
+@media (hover: none){
+  a.has-tooltip::after,
+  a.has-tooltip::before{
+    display:none;
+  }
+}
+
+/* FIX263: garantir dimensão do novo logo PNG */
+.site-logo img, #siteLogo, .logo img, .brand img{
+  max-height: 56px;
+  width: auto;
+}
+@media (max-width: 520px){
+  .site-logo img, #siteLogo, .logo img, .brand img{
+    max-height: 46px;
+  }
+}
+
+/* FIX264: mais espaço entre logo e menu */
+header .site-logo,
+header .brand,
+header .logo{
+  margin-bottom: 14px;
+}
+header nav{
+  margin-top: 6px;
+}
+@media (max-width: 520px){
+  header .site-logo,
+  header .brand,
+  header .logo{
+    margin-bottom: 12px;
+  }
+  header nav{
+    margin-top: 4px;
+  }
+}
+
+/* FIX266: puxar logo mais para a esquerda */
+header .site-logo,
+header .brand,
+header .logo{
+  margin-left: -10px;
+}
+@media (max-width: 520px){
+  header .site-logo,
+  header .brand,
+  header .logo{
+    margin-left: -6px;
+  }
+}
+
+/* FIX267: ainda mais espaço entre logo e menu */
+header .site-logo,
+header .brand,
+header .logo{
+  margin-bottom: 22px;
+}
+header nav{
+  margin-top: 10px;
+}
+@media (max-width: 520px){
+  header .site-logo,
+  header .brand,
+  header .logo{
+    margin-bottom: 18px;
+  }
+  header nav{
+    margin-top: 8px;
+  }
+}
