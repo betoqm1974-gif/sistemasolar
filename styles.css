@@ -2238,23 +2238,3 @@ header .logo{
     margin-left: -6px;
   }
 }
-
-/* FIX267: ainda mais espaço entre logo e menu */
-header .site-logo,
-header .brand,
-header .logo{
-  margin-bottom: 22px;
-}
-header nav{
-  margin-top: 10px;
-}
-@media (max-width: 520px){
-  header .site-logo,
-  header .brand,
-  header .logo{
-    margin-bottom: 18px;
-  }
-  header nav{
-    margin-top: 8px;
-  }
-}
