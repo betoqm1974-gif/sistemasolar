@@ -11,7 +11,7 @@
 <link href="favicon.ico" rel="icon" sizes="any"/>
 <link href="favicon.png" rel="icon" type="image/png"/>
 <meta content="Créditos e fontes (NASA/JPL, vídeos e imagens) do site do Sistema Solar." name="description"/>
-<link href="styles.css?v=223" rel="stylesheet"/>
+<link href="styles.css?v=261" rel="stylesheet"/>
 </head>
 <body class="page-acessibilidade">
 <a class="skip-link" href="#conteudo">Saltar para o conteúdo</a>
@@ -21,7 +21,16 @@
 <img alt="" aria-hidden="true" src="images/logo.svg"/>
 <span class="brand-text">Sistema Solar</span>
 </a>
-<nav aria-label="Navegação" class="main-nav"><a href="index.html">Início</a> | <a href="planetas.html">Planetas</a> | <a href="multimedia.html">Multimédia</a> | <a href="acessibilidade.html">Acessibilidade</a> | <a href="contacto.html">Contacto</a></nav>
+<nav aria-label="Navegação" class="main-nav"><a aria-label="Início" class="nav-home" href="index.html" title="Início">
+<span class="nav-home-icon" aria-hidden="true">
+<svg class="nav-home-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+  <circle class="home-bg" cx="32" cy="32" r="30"></circle>
+  <path class="home-roof" d="M16 30 L32 16 L48 30" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path class="home-house" d="M22 30 V48 H42 V30" />
+  <path class="home-door" d="M29 48 V38 H35 V48" />
+</svg>
+</span><span class="sr-only">Início</span>
+</a> | <a href="planetas.html">Planetas</a> | <a href="multimedia.html">Multimédia</a> | <a href="acessibilidade.html">Acessibilidade</a> | <a href="contacto.html">Contacto</a></nav>
 <div class="controls-row"><button aria-label="Desativar leitura em voz" aria-pressed="true" class="btn" id="ttsToggle" type="button">Leitura: ligada</button>
 <span aria-hidden="true" class="sep">|</span>
 <div aria-label="Tamanho do texto" class="font-controls" id="fontControls" role="group">
@@ -32,16 +41,16 @@
 </div>
 </div>
 </header>
-<main class="container" id="conteudo">
+<main class="container no-auto-read" id="conteudo">
 <h1 class="no-read">Acessibilidade</h1>
 <p class="no-read small"><button class="btn" data-speak-female="accSummary" type="button">Audiodescrição</button></p>
 <div class="sr-only" id="accSummary">Página de acessibilidade. Explica como o site apoia pessoas com deficiência: navegação por teclado, leitor de ecrã, tamanho do texto em três níveis, popups com zoom e transcrições para vídeos.</div>
-<section>
+<section><div class="section-title-row title-row-right row-compromisso"><h2>Compromisso</h2><button class="btn btn-read read-btn btn-commitment" data-speak-female="accCommitment" style="margin-left: 12px;" type="button">Ler</button></div><div class="sr-only" id="accCommitment">Compromisso.  Este site foi concebido para ser acessível a todas as pessoas, incluindo utilizadores com deficiência visual, auditiva, motora e cognitiva. Procuramos seguir as boas práticas das WCAG (níveis A/AA) e oferecer opções adicionais que melhoram a experiência para pessoas cegas ou com baixa visão.</div>
 <p>Este site foi concebido para ser acessível a todas as pessoas, incluindo utilizadores com deficiência visual, auditiva, motora e cognitiva. Procuramos seguir as boas práticas das WCAG (níveis A/AA) e oferecer opções adicionais que melhoram a experiência para pessoas cegas ou com baixa visão.</p>
 </section>
 <section>
-<h2>Funcionalidades de acessibilidade</h2>
-<ul>
+<div class="section-title-row"><h2>Funcionalidades de acessibilidade</h2><button class="btn btn-read read-btn" data-speak-female="accFeaturesRead" style="margin-left: 12px;" type="button">Ler</button></div><div class="sr-only" id="accFeaturesRead">Funcionalidades de acessibilidade.  Navegação por teclado (Tab/Shift+Tab) com foco visível..  Leitura em voz : botão "Leitura: ligada/desligada" e botões explícitos "Ouvir …" em conteúdos-chave..  Tamanho do texto : botões A / AA / AAA para aumentar a letra (a escolha fica memorizada)..  Conteúdo estruturado com títulos e zonas semânticas (header/nav/main/footer)..  Imagens com descrição e popups com controlo por teclado..  Zoom nas imagens no popup (− / 1× / + e Ctrl + roda do rato)..  Vídeos com apoio : transcrição no site e tentativa de legendas quando disponíveis..  Atualizações anunciadas em listas filtradas (aria-live no contador de resultados)..  "Saltar para o conteúdo" (skip link) para utilizadores de teclado/leitor de ecrã..</div>
+<ul class="square-list">
 <li><strong>Navegação por teclado</strong> (Tab/Shift+Tab) com foco visível.</li>
 <li><strong>Leitura em voz</strong>: botão "Leitura: ligada/desligada" e botões explícitos "Ouvir …" em conteúdos-chave.</li>
 <li><strong>Tamanho do texto</strong>: botões A / AA / AAA para aumentar a letra (a escolha fica memorizada).</li>
@@ -54,18 +63,16 @@
 </ul>
 </section>
 <section>
-<h2>Como usar com leitor de ecrã</h2>
-<ul>
+<div class="section-title-row"><h2>Como usar com leitor de ecrã</h2><button class="btn btn-read read-btn" data-speak-female="accScreenReaderRead" style="margin-left: 12px;" type="button">Ler</button></div><div class="sr-only" id="accScreenReaderRead">Como usar com leitor de ecrã.  Use Tab para navegar pelos links e botões..  Abra imagens em popup e use os botões de zoom quando necessário..  Nos vídeos, utilize a transcrição e os botões "Ouvir transcrição", se preferir áudio..  Se a leitura em voz não funcionar no seu browser, use um leitor de ecrã do sistema (NVDA/VoiceOver)..</div>
+<ul class="square-list">
 <li>Use Tab para navegar pelos links e botões.</li>
 <li>Abra imagens em popup e use os botões de zoom quando necessário.</li>
 <li>Nos vídeos, utilize a transcrição e os botões "Ouvir transcrição", se preferir áudio.</li>
 <li>Se a leitura em voz não funcionar no seu browser, use um leitor de ecrã do sistema (NVDA/VoiceOver).</li>
 </ul>
 </section>
-<section>
-<h2>Contactos e melhorias</h2>
+<section class="spaced-top"><div class="title-row-right tight-read row-contactos section-title-row"><h2 class="no-read">Contactos e melhorias</h2><button class="btn-read btn-contactos read-btn btn" data-speak-female="readContactosMelhoriasFixed" style="margin-left: 12px;" type="button">Ler</button><div class="sr-only" id="readContactosMelhoriasFixed">Contactos e melhorias.  Se encontrar alguma barreira de acessibilidade, agradecemos o seu contacto para melhorar o site. Pode descrever o problema, a página e o dispositivo/browser utilizado. Utilize a página contacto para o efeito.</div></div>
 <p class="no-read">Se encontrar alguma barreira de acessibilidade, agradecemos o seu contacto para melhorar o site. Pode descrever o problema, a página e o dispositivo/browser utilizado. Utilize a página contacto para o efeito.</p>
-<p class="small">Última atualização: 18-02-2026</p>
 </section>
 </main>
 <footer class="site-footer" role="contentinfo">
@@ -73,14 +80,14 @@
 <div>Manuel Morais © 2026 - Sistema Solar</div>
 <div>Conteúdos Digitais e Páginas Web Acessíveis (3ª Edição)</div>
 <div>SKILLS4Digital (2024-26)</div>
-</div>
+</div><div class="footer-update">Última atualização: 18-02-2026</div>
 </footer>
 <script src="modal.js"></script>
 <script src="speech.js"></script>
-<script src="click-speak.js?v=223"></script>
-<script src="hover-speak.js?v=223"></script>
+<script src="click-speak.js?v=260"></script>
+<script src="hover-speak.js?v=260"></script>
 <script src="font-size.js"></script>
-<script src="read-buttons.js?v=223"></script>
+<script src="read-buttons.js?v=260"></script>
 <script src="menu-tts.js"></script>
 <script src="static-read.js"></script>
 <script src="ui-guards.js"></script>

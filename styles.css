@@ -675,16 +675,6 @@ main.container li{
 }
 
 /* Lista quadrada com avanço (bolinha também avança) */
-.square-list{
-  list-style-type: square;
-  list-style-position: inside;
-  padding-left: 2.2rem; /* avanço global (marca + texto) */
-  margin: .4rem 0 1.1rem;
-}
-.square-list li{
-  margin: .25rem 0 .65rem;
-}
-
 /* Os dois itens com avanço extra em relação ao parágrafo anterior */
 .square-list .indent-item{
   padding-left: .2rem !important; /* pequeno ajuste interno */
@@ -706,11 +696,6 @@ main.container li{
 .back-to-top{ position: static !important; }
 
 /* Mais indentação para a lista quadrada (em relação ao parágrafo anterior) */
-.square-list{
-  padding-left: 3.2rem !important;
-  margin-left: 1.0rem;
-}
-
 /* Linha de botões "Ir para o topo" (Home) */
 .backtop-row{
   display:flex;
@@ -1868,3 +1853,289 @@ section#fotos, section[data-section="fotos"], section.fotos { margin-top: 64px !
 .page-acessibilidade .section-title-row.title-row-right > :last-child{
   margin-left:auto;
 }
+
+/* FIX225: Acessibilidade - botão Ler junto ao título "Contactos e melhorias" */
+.page-acessibilidade .section-title-row.tight-read{
+  gap: 6px !important;
+}
+.page-acessibilidade .section-title-row.tight-read > :last-child{
+  margin-left: 8px !important; /* ligeiro afastamento, como nas outras secções */
+}
+
+/* FIX225: Mais espaço antes da secção Contactos e melhorias */
+.page-acessibilidade section.spaced-top{
+  margin-top: 28px;
+}
+
+/* FIX226: Acessibilidade - botões 'Ler' junto ao título (não encostados ao lado direito) */
+.page-acessibilidade .section-title-row{
+  justify-content:flex-start !important;
+}
+.page-acessibilidade .section-title-row > :last-child{
+  margin-left: 10px !important; /* pequeno espaço após o título */
+}
+
+/* FIX227: Override final - botões 'Ler' ao lado do título (mesmo com .title-row-right) */
+.page-acessibilidade .section-title-row.title-row-right{
+  justify-content:flex-start !important;
+}
+.page-acessibilidade .section-title-row.title-row-right > :last-child{
+  margin-left: 10px !important;
+  margin-right: 0 !important;
+}
+
+.page-acessibilidade .section-title-row.row-contactos > :last-child{
+  margin-left: 1cm !important;
+}
+
+.page-acessibilidade .section-title-row.row-contactos button.btn-contactos{
+  margin-left: 1cm !important;
+}
+
+/* FIX231: Acessibilidade - afastamento do botão Ler em "Contactos e Melhorias" (igual aos restantes) */
+.page-acessibilidade .section-title-row.row-contactos button.btn-contactos{
+  margin-left: 12px !important;
+}
+
+
+/* FIX234: Compromisso - botão Ler ao lado do título com pequeno espaço */
+.page-acessibilidade .section-title-row.row-compromisso{
+  justify-content:flex-start !important;
+}
+.page-acessibilidade .section-title-row.row-compromisso > :last-child{
+  margin-left: 12px !important;
+}
+
+/* FIX236: linha de última atualização no rodapé */
+footer .footer-update{
+  color: #fff;
+  font-size: 0.85rem;
+  line-height: 1.1;
+  margin-top: 2px;
+  padding-bottom: 0;
+}
+
+/* FIX237: centrar a linha de última atualização no rodapé */
+footer .footer-update{
+  text-align: center;
+  width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.page-acessibilidade ul
+
+
+footer .footer-update{
+  color: #ffd24a !important;
+}
+
+
+/* FIX247: bullets quadrados alinhados como no Index (sem botões nos bullets) */
+.page-acessibilidade ul.square-list{
+  list-style: none !important;
+  padding-left: 2.2rem !important;
+  margin: .4rem 0 1.1rem;
+}
+.page-acessibilidade ul.square-list li{
+  display: flex;
+  align-items: flex-start;   /* base no topo do texto */
+  gap: 0.65rem;              /* distância quadrado-texto */
+  margin: 0.45rem 0;
+}
+.page-acessibilidade ul.square-list li::before{
+  content: "■";
+  color: #fff;
+  font-size: 0.50rem;        /* menor */
+  line-height: 1;
+  flex: 0 0 auto;
+  margin-top: 0.38em;        /* alinha ao meio da 1ª linha */
+}
+
+/* FIX247: última atualização a amarelo */
+footer .footer-update{
+  color: #ffd24a !important;
+}
+
+/* FIX248: ícone Home no menu */
+a.nav-home{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.1rem;
+}
+.nav-icon{
+  display: inline-flex;
+  width: 1.15rem;
+  height: 1.15rem;
+}
+.nav-icon svg{
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+}
+
+/* FIX249: ícone Home (imagem) no menu */
+a.nav-home{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.2rem;
+}
+.nav-home-img{
+  width: 1.35rem;
+  height: 1.35rem;
+  display: inline-block;
+}
+
+/* FIX251: ícone Home maior + menu principal com letra maior */
+nav a{
+  font-size: 1.15rem; /* +1 nível */
+}
+a.nav-home{
+  min-width: 3.3rem;
+}
+.nav-home-img{  width: 2.4rem;  height: 2.4rem;
+  display: inline-block;
+}
+
+/* FIX252: menu em maiúsculas */
+nav a{
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* FIX253: garantir ícone Home visível (img + fallback background) */
+a.nav-home{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width: 3.3rem;
+  background-image: url("images/home-icon.svg");
+  background-repeat:no-repeat;
+  background-position:center;
+  background-size: 2.4rem 2.4rem;
+}
+.nav-home-img{  width: 2.4rem;  height: 2.4rem;
+  display:inline-block;
+}
+/* Se o browser bloquear imagens no CSS, o <img> continua a mostrar. */
+
+/* fallback background swap */
+a.nav-home {
+  background-image: url("images/home-icon.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 2.4rem 2.4rem;
+}
+a.nav-home:hover,
+a.nav-home:focus-visible {
+  background-image: url("images/home-icon-hover.svg");
+}
+
+
+
+/* cores base */
+.nav-home-svg .home-bg { fill: #FF9F1A; }
+.nav-home-svg .home-house { fill: #FFFFFF; }
+.nav-home-svg .home-roof { stroke: #FFFFFF; }
+.nav-home-svg .home-door { fill: #FF9F1A; }
+/* hover/focus: troca apenas cores (mesmo SVG) */
+a.nav-home:hover .home-bg,
+a.nav-home:focus-visible .home-bg { fill: #FFFFFF; }
+a.nav-home:hover .home-house,
+a.nav-home:focus-visible .home-house { fill: #FF9F1A; }
+a.nav-home:hover .home-roof,
+a.nav-home:focus-visible .home-roof { stroke: #FF9F1A; }
+a.nav-home:hover .home-door,
+a.nav-home:focus-visible .home-door { fill: #FFFFFF; }
+
+/* FIX259: Home SVG (estilo "casa" em círculo) — só muda cores no hover/focus */
+a.nav-home {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 3.3rem;
+  padding: 0.1rem 0.2rem;
+  background-image: none !important;
+}
+.nav-home-icon {
+  width: 2.6rem;
+  height: 2.6rem;
+  display: inline-flex;
+}
+.nav-home-svg {
+  width: 2.6rem;
+  height: 2.6rem;
+  display: block;
+}
+/* cores base */
+.nav-home-svg .home-bg { fill: #FF9F1A; }
+.nav-home-svg .home-house { fill: #FFFFFF; }
+.nav-home-svg .home-roof { stroke: #FFFFFF; }
+.nav-home-svg .home-door { fill: #FF9F1A; }
+/* hover/focus: troca apenas cores (mesmo SVG) */
+a.nav-home:hover .home-bg,
+a.nav-home:focus-visible .home-bg { fill: #FFFFFF; }
+a.nav-home:hover .home-house,
+a.nav-home:focus-visible .home-house { fill: #FF9F1A; }
+a.nav-home:hover .home-roof,
+a.nav-home:focus-visible .home-roof { stroke: #FF9F1A; }
+a.nav-home:hover .home-door,
+a.nav-home:focus-visible .home-door { fill: #FFFFFF; }
+
+/* FIX260: garantir ícone Home visível */
+a.nav-home .sr-only {
+  position:absolute !important;
+  width:1px !important;
+  height:1px !important;
+  padding:0 !important;
+  margin:-1px !important;
+  overflow:hidden !important;
+  clip:rect(0,0,0,0) !important;
+  white-space:nowrap !important;
+  border:0 !important;
+}
+a.nav-home {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  line-height:1;
+  background:none !important;
+}
+.nav-home-icon {
+  display:inline-flex;
+  width:2.6rem;
+  height:2.6rem;
+}
+.nav-home-svg {
+  display:block;
+  width:2.6rem;
+  height:2.6rem;
+}
+.nav-home-svg .home-bg { fill: #FF9F1A; }
+.nav-home-svg .home-house { fill: #FFFFFF; }
+.nav-home-svg .home-roof { stroke: #FFFFFF; stroke-width:6; }
+.nav-home-svg .home-door { fill: #FF9F1A; }
+a.nav-home:hover .home-bg,
+a.nav-home:focus-visible .home-bg { fill: #FFFFFF; }
+a.nav-home:hover .home-house,
+a.nav-home:focus-visible .home-house { fill: #FF9F1A; }
+a.nav-home:hover .home-roof,
+a.nav-home:focus-visible .home-roof { stroke: #FF9F1A; }
+a.nav-home:hover .home-door,
+a.nav-home:focus-visible .home-door { fill: #FFFFFF; }
+
+/* FIX261: Home icon inline SVG visible + color swap only */
+a.nav-home{display:inline-flex;align-items:center;justify-content:center;min-width:3.3rem;line-height:1;background:none!important}
+.nav-home-icon{display:inline-flex;width:2.6rem;height:2.6rem}
+.nav-home-svg{display:block;width:2.6rem;height:2.6rem}
+.nav-home-svg .home-bg{fill:#FF9F1A}
+.nav-home-svg .home-house{fill:#FFFFFF}
+.nav-home-svg .home-roof{stroke:#FFFFFF;stroke-width:6}
+.nav-home-svg .home-door{fill:#FF9F1A}
+a.nav-home:hover .home-bg,a.nav-home:focus-visible .home-bg{fill:#FFFFFF}
+a.nav-home:hover .home-house,a.nav-home:focus-visible .home-house{fill:#FF9F1A}
+a.nav-home:hover .home-roof,a.nav-home:focus-visible .home-roof{stroke:#FF9F1A}
+a.nav-home:hover .home-door,a.nav-home:focus-visible .home-door{fill:#FFFFFF}

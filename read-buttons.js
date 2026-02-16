@@ -68,6 +68,9 @@
   }
 
   function enhanceHeading(el, homeMode=false){
+    if(el.closest('ul.square-list')) return;
+    if(el.closest('.no-auto-read')) return;
+    if(el.closest('.no-auto-read')) return;
     if(el.closest("nav, header")) return;
     if(el.classList.contains("no-read")) return;
     if(el.parentElement && el.parentElement.classList && el.parentElement.classList.contains("read-heading")) return;
@@ -120,6 +123,9 @@ return title;
   }
 
   function enhancePara(el){
+    if(el.closest('ul.square-list')) return;
+    if(el.closest('.no-auto-read')) return;
+    if(el.closest('.no-auto-read')) return;
     if(el.closest("nav, header, footer")) return;
     if(el.classList.contains("no-read")) return;
     if(el.querySelector && (el.querySelector("#backToTopRight") || el.querySelector("#backToTopLeft"))) return;
@@ -135,7 +141,8 @@ return title;
   }
 
   function enhanceLi(li){
-    if(li.closest("nav, header, footer")) return;
+    if(li.closest("ul.square-list")) return;
+if(li.closest("nav, header, footer")) return;
     if(li.classList.contains("no-read")) return;
     if(li.querySelector && li.querySelector(".read-btn")) return;
 
