@@ -2156,7 +2156,7 @@ content: attr(data-tooltip);
   padding: 0.3rem 0.5rem;
   border-radius: 0.6rem;
   background: #FF9F1A;
-  color: #111;
+  color: #fff;
   white-space: nowrap;
   opacity: 0;
   pointer-events: none;
@@ -2574,7 +2574,7 @@ button.has-tooltip-below::after{
   padding: 0.42rem 0.7rem;
   border-radius: 0.6rem;
   background: #FF9F1A;
-  color: #111;
+  color: #fff;
   white-space: nowrap;
   opacity: 0;
   pointer-events: none;
