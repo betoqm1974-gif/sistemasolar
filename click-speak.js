@@ -95,7 +95,12 @@
     const on = isEnabled();
     btn.setAttribute("aria-pressed", on ? "true" : "false");
     btn.textContent = on ? "Leitura: ligada" : "Leitura: desligada";
-    btn.setAttribute("aria-label", on ? "Desativar leitura em voz" : "Ativar leitura em voz");
+    // AccessMonitor/WCAG: o nome acessível deve conter o texto visível do botão.
+    // Mantemos o texto visível e acrescentamos instrução no aria-label.
+    btn.setAttribute(
+      "aria-label",
+      (btn.textContent || "").trim() + ". Ativar ou desativar leitura em voz."
+    );
   }
 
   

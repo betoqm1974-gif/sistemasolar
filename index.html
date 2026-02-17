@@ -12,18 +12,20 @@
 <link href="favicon.ico" rel="icon" sizes="any"/>
 <link href="favicon.png" rel="icon" type="image/png"/>
 <meta content="Site acessível sobre o Sistema Solar com imagens reais da NASA e vídeos com transcrição." name="description"/>
-<link href="styles.css?v=apm1" rel="stylesheet"/>
+<link href="styles.css?v=aa1" rel="stylesheet"/>
 </head>
 <body>
+  <a class="skip-link" href="#conteudo">Saltar para o conteúdo</a>
+
 <div aria-hidden="true" id="topo" tabindex="-1"></div>
 <a class="skip-link" href="#conteudo">Saltar para o conteúdo</a>
 <header class="header">
 <nav aria-label="Barra de navegação principal" class="wrap nav">
-<a class="brand" href="index.html">
+<a aria-label="Sistema Solar" class="brand" href="index.html">
 <img alt="" aria-hidden="true" src="images/logo.png"/>
 <span class="brand-text">Sistema Solar</span>
 </a>
-<nav aria-label="Navegação" class="main-nav"><a aria-label="Início" class="nav-home has-tooltip" data-tooltip="INÍCIO" href="index.html" title="INÍCIO">
+<nav aria-label="Navegação" class="main-nav"><a aria-label="Início" class="nav-home has-tooltip" data-tooltip="INÍCIO" href="index.html" aria-current="page" title="INÍCIO">
 <span aria-hidden="true" class="nav-home-icon">
 <svg aria-hidden="true" class="nav-home-svg" focusable="false" viewbox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
 <circle class="home-bg" cx="32" cy="32" r="30"></circle>
@@ -33,11 +35,11 @@
 </svg>
 </span><span class="sr-only">Início</span>
 </a> | <a href="planetas.html">Planetas</a> | <a href="multimedia.html">Multimédia</a> | <a href="acessibilidade.html">Acessibilidade</a> | <a href="contacto.html">Contacto</a></nav>
-<div class="controls-row"><button aria-label="Desativar leitura em voz" aria-pressed="true" class="btn" id="ttsToggle" type="button">Leitura: ligada</button>
+<div class="controls-row"><button aria-label="Leitura: ligada. Ativar ou desativar leitura em voz." aria-pressed="true" class="btn" id="ttsToggle" type="button">Leitura: ligada</button>
 <span aria-hidden="true" class="sep">|</span>
 <div aria-label="Tamanho do texto" class="font-controls" id="fontControls" role="group">
-<button class="btn" type="button" data-font-step="-1" aria-label="Diminuir tamanho do texto">A-</button>
-<button class="btn" type="button" data-font-step="1" aria-label="Aumentar tamanho do texto">A+</button>
+<button class="btn" type="button" data-font-step="-1" aria-label="A- diminuir tamanho do texto">A-</button>
+<button class="btn" type="button" data-font-step="1" aria-label="A+ aumentar tamanho do texto">A+</button>
 </div>
 </div>
 </header>

@@ -244,3 +244,51 @@ document.addEventListener("click", (e)=>{
 // FIX132_card_read_curiosity
 
 // FIX133_force_card_read
+
+/* FIX_AA_MODAL_FOCUS: foco e ESC em popups (WCAG AA) */
+(function(){
+  function isDialog(el){ return el && (el.getAttribute('role')==='dialog' || el.classList.contains('modal') || el.classList.contains('popup')); }
+  function findOpenDialog(){
+    const cand = document.querySelector('[role="dialog"][data-open="true"], .modal.is-open, .popup.is-open, .popup.open, .modal.open');
+    return cand;
+  }
+  let lastFocus = null;
+
+  document.addEventListener('click', function(e){
+    const btn = e.target.closest('[data-open-popup], [data-open-modal], .open-popup, .open-modal');
+    if(btn){
+      lastFocus = document.activeElement;
+      setTimeout(()=>{
+        const dlg = findOpenDialog() || document.querySelector('[role="dialog"]');
+        if(dlg){
+          dlg.setAttribute('aria-modal','true');
+          dlg.setAttribute('role','dialog');
+          if(!dlg.hasAttribute('tabindex')) dlg.setAttribute('tabindex','-1');
+          dlg.dataset.open = "true";
+          dlg.focus({preventScroll:true});
+        }
+      }, 50);
+    }
+  }, true);
+
+  document.addEventListener('keydown', function(e){
+    const dlg = findOpenDialog();
+    if(e.key === 'Escape' && dlg){
+      const closeBtn = dlg.querySelector('[data-close], .close, .btn-close, button[aria-label*="Fechar"]');
+      if(closeBtn){ closeBtn.click(); }
+      else { dlg.classList.remove('open','is-open'); dlg.removeAttribute('data-open'); }
+      if(lastFocus && typeof lastFocus.focus === 'function'){
+        setTimeout(()=>lastFocus.focus({preventScroll:true}), 50);
+      }
+    }
+  });
+
+  // sempre cancelar fala anterior antes de iniciar nova
+  const _speak = window.speakText;
+  if(typeof _speak === 'function'){
+    window.speakText = function(txt){
+      try{ window.speechSynthesis && window.speechSynthesis.cancel(); }catch(e){}
+      return _speak(txt);
+    }
+  }
+})();

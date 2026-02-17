@@ -2446,3 +2446,108 @@ input[type="reset"],
   align-items: center;
   gap: 10px;
 }
+
+/* FIX: logo sem retângulo ao passar o rato (mantém foco visível por teclado) */
+.brand,
+.brand:link,
+.brand:visited{
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  text-decoration: none !important;
+}
+.brand:hover,
+.brand:active{
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  transform: none !important;
+  filter: none !important;
+  text-decoration: none !important;
+}
+/* foco por teclado (acessibilidade) */
+.brand:focus-visible{
+  outline: 2px solid #FFD54A !important;
+  outline-offset: 3px !important;
+  border-radius: 3px !important;
+}
+
+
+
+.main-nav a:hover,
+.main-nav a:focus,
+.main-nav a:focus-visible{
+  color: #FFD54A !important;
+}
+.main-nav a[aria-current="page"]{
+  color: #FFD54A !important;
+}
+/* evitar movimentos no hover */
+.main-nav a:hover,
+.main-nav a:active{
+  transform:none !important;
+}
+
+
+
+
+/* FIX: menu em cor da casa (cor do ícone home) ao passar o rato e na página ativa */
+.main-nav a,
+.main-nav a:link,
+.main-nav a:visited{
+  color: inherit;
+}
+.main-nav a:hover,
+.main-nav a:focus,
+.main-nav a:focus-visible{
+  color: #FF9F1A !important;
+}
+.main-nav a[aria-current="page"]{
+  color: #FF9F1A !important;
+}
+/* opcional: também realça durante o clique */
+.main-nav a:active{
+  color: #FF9F1A !important;
+}
+
+
+/* FIX_AA_CORE: melhorias WCAG AA (foco, skip link, movimento reduzido, consistência) */
+.skip-link{
+  position:absolute;
+  left:10px;
+  top:10px;
+  padding:.5rem .75rem;
+  background:#000;
+  color:#fff;
+  font-weight:700;
+  border:2px solid #fff;
+  border-radius:6px;
+  transform:translateY(-200%);
+  z-index:9999;
+}
+.skip-link:focus,
+.skip-link:focus-visible{
+  transform:translateY(0);
+  outline:2px solid #FFD54A;
+  outline-offset:3px;
+}
+
+/* foco visível consistente */
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible{
+  outline: 2px solid #FFD54A;
+  outline-offset: 3px;
+}
+
+/* evitar “saltos”/movimentos em hover */
+a:hover, button:hover{
+  transform:none !important;
+}
+
+/* preferências de menos movimento */
+@media (prefers-reduced-motion: reduce){
+  *{
+    animation:none !important;
+    transition:none !important;
+    scroll-behavior:auto !important;
+  }
+}
