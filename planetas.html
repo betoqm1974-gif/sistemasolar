@@ -12,19 +12,18 @@
 <link href="favicon.ico" rel="icon" sizes="any"/>
 <link href="favicon.png" rel="icon" type="image/png"/>
 <meta content="Lista acessível de planetas com curiosidades e imagens reais da NASA." name="description"/>
-<link href="styles.css?v=aa1" rel="stylesheet"/>
+<link href="styles.css?v=bgfix1" rel="stylesheet"/>
 </head>
 <body>
   <a class="skip-link" href="#conteudo">Saltar para o conteúdo</a>
 
-<a class="skip-link" href="#mainContent">Saltar para o conteúdo</a>
 <header class="header">
 <nav class="wrap nav" aria-label="Barra de navegação principal">
 <a aria-label="Sistema Solar" class="brand" href="index.html">
 <img alt="" aria-hidden="true" src="images/logo.png"/>
 <span class="brand-text">Sistema Solar</span>
 </a>
-<nav aria-label="Navegação" class="main-nav"><a aria-label="Início" class="nav-home has-tooltip" data-tooltip="INÍCIO" href="index.html" title="INÍCIO">
+<nav aria-label="Navegação" class="main-nav"><a aria-label="Início" class="nav-home has-tooltip" data-tooltip="Início" href="index.html">
 <span aria-hidden="true" class="nav-home-icon">
 <svg aria-hidden="true" class="nav-home-svg" focusable="false" viewbox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
 <circle class="home-bg" cx="32" cy="32" r="30"></circle>
@@ -34,15 +33,18 @@
 </svg>
 </span><span class="sr-only">Início</span>
 </a> | <a href="planetas.html" aria-current="page">Planetas</a> | <a href="multimedia.html">Multimédia</a> | <a href="acessibilidade.html">Acessibilidade</a> | <a href="contacto.html">Contacto</a></nav>
-<div class="controls-row"><button aria-label="Leitura: ligada. Ativar ou desativar leitura em voz." aria-pressed="true" class="btn" id="ttsToggle" type="button">Leitura: ligada</button>
+<div class="controls-row"><button aria-pressed="true" class="btn" id="ttsToggle" type="button" aria-describedby="ttsHint">Leitura: ligada</button>
+      <span class="sr-only" id="ttsHint">Ativar ou desativar leitura em voz.</span>
 <span aria-hidden="true" class="sep">|</span>
 <div aria-label="Tamanho do texto" class="font-controls" id="fontControls" role="group">
-<button class="btn" type="button" data-font-step="-1" aria-label="A- diminuir tamanho do texto">A-</button>
-<button class="btn" type="button" data-font-step="1" aria-label="A+ aumentar tamanho do texto">A+</button>
+        <span class="sr-only" id="fontHint">Use A- para diminuir e A+ para aumentar o tamanho do texto.</span>
+        
+        <button data-tooltip="🔍−" class="btn font-minus has-tooltip-below" type="button" data-font-step="-1" aria-describedby="fontHint" aria-label="Diminuir tamanho do texto">A-</button>
+<button data-tooltip="🔍+" class="btn font-plus has-tooltip-below" type="button" data-font-step="1" aria-describedby="fontHint" aria-label="Aumentar tamanho do texto">A+</button>
 </div>
 </div>
 </header>
-<main class="container" id="mainContent" tabindex="-1">
+<main class="container" id="conteudo" tabindex="-1">
 <article class="reader-article" itemprop="articleBody" role="article">
 <div class="title-row">
 <h1 id="planetasTitle">Planetas</h1></div>
