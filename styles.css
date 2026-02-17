@@ -20,7 +20,7 @@ body{
   background-color: var(--bg);
   background-image:
     linear-gradient(180deg, rgba(11,16,32,.78), rgba(11,16,32,.92)),
-    url("images/galaxia-nasa-home.jpg");
+    url("images/galaxia-nasa.webp");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -41,7 +41,7 @@ a:focus, button:focus, input:focus, select:focus, textarea:focus{outline:3px sol
 }
 .wrap{max-width:var(--max); margin:0 auto; padding:1rem}
 .nav{
-  display:flex; gap: 2.3rem; flex-wrap:wrap; align-items:center; justify-content:space-between;
+  display:flex; gap: 1.5rem; flex-wrap:wrap; align-items:center; justify-content:space-between;
 }
 .nav nav{display:flex; gap:.4rem; flex-wrap:wrap; align-items:center}
 .nav a{padding:.5rem .7rem; border-radius:.6rem; text-decoration:none}
@@ -2145,17 +2145,17 @@ a.has-tooltip{
   position: relative;
 }
 a.has-tooltip::after{
-content: attr(data-tooltip);
+  content: attr(data-tooltip);
   position: absolute;
   left: 50%;
   top: -0.65rem;
   transform: translate(-50%, -100%);
-  font-size: 1.0rem;
+  font-size: 0.85rem;
   font-weight: 700;
   letter-spacing: 0.04em;
   padding: 0.3rem 0.5rem;
   border-radius: 0.6rem;
-  background: #FF9F1A;
+  background: rgba(0,0,0,0.78);
   color: #fff;
   white-space: nowrap;
   opacity: 0;
@@ -2171,7 +2171,7 @@ a.has-tooltip::before{
   transform: translateX(-50%) rotate(45deg);
   width: 0.55rem;
   height: 0.55rem;
-  background: #FF9F1A;
+  background: rgba(0,0,0,0.78);
   opacity: 0;
   pointer-events: none;
   transition: opacity 120ms ease;
@@ -2574,7 +2574,7 @@ button.has-tooltip-below::after{
   padding: 0.42rem 0.7rem;
   border-radius: 0.6rem;
   background: #FF9F1A;
-  color: #fff;
+  color: #111;
   white-space: nowrap;
   opacity: 0;
   pointer-events: none;
