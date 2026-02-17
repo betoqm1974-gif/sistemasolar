@@ -2238,3 +2238,119 @@ header .logo{
     margin-left: -6px;
   }
 }
+
+
+/* FIX: bullets quadrados na Acessibilidade alinhados como no Index */
+ul.square-list{
+  list-style-type: square;
+  list-style-position: outside;
+  padding-left: 2.2rem;
+  margin: .4rem 0 1.1rem;
+}
+ul.square-list li{
+  margin: 0.45rem 0;
+}
+ul.square-list li::marker{
+  color: #fff;
+  font-size: 0.75em;
+}
+
+/* garantir que a página Acessibilidade não força bullets via flex/::before */
+.page-acessibilidade ul.square-list{
+  list-style-type: square !important;
+  list-style-position: outside !important;
+}
+.page-acessibilidade ul.square-list li{
+  display: list-item !important;
+  align-items: initial !important;
+  gap: initial !important;
+}
+.page-acessibilidade ul.square-list li::before{
+  content: none !important;
+}
+
+/* FIX_BTN_FONT: botões com tamanho igual aos parágrafos */
+button,
+.btn,
+a.button,
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+select,
+input,
+textarea{
+  font-size: 1rem;
+  line-height: 1.2;
+}
+
+/* FIX_CONTRAST_001: melhorias de contraste (WCAG AA) */
+
+/* 1) Texto sobre fundos com imagem/galáxia: dar base mais escura */
+:root{
+  --ss-overlay: rgba(0,0,0,.45);
+  --ss-panel: rgba(0,0,0,.55);
+  --ss-panel-strong: rgba(0,0,0,.68);
+  --ss-text: #ffffff;
+  --ss-muted: rgba(255,255,255,.88);
+  --ss-link: #bfe6ff; /* mais claro */
+  --ss-focus: #ffd54d; /* amarelo visível */
+}
+
+/* 2) Garantir cor do texto por defeito em áreas com fundo escuro */
+body{
+  color: var(--ss-text);
+}
+
+/* 3) Cartões, tabelas e caixas translúcidas: aumentar opacidade */
+.card, .card-inner, .tile, .panel, .box, .table-box,
+.video-card, .photo-card, .planet-card,
+.popup, .modal, .modal-content, .popup-content{
+  background: var(--ss-panel) !important;
+  color: var(--ss-text) !important;
+}
+
+/* Onde existam fundos demasiado transparentes */
+.card *, .video-card *, .photo-card *, .planet-card *,
+.popup *, .modal *{
+  color: inherit;
+}
+
+/* 4) Descrições curtas/legendas (às vezes aparecem em azul) */
+small, .hint, .helper-text, .subtitle, .caption, .note,
+#mediaHint, #photosHint, .media-hint, .photos-hint{
+  color: var(--ss-muted) !important;
+}
+
+/* 5) Links e estados hover com contraste */
+a{
+  color: var(--ss-link);
+}
+a:hover, a:focus{
+  color: #e6f6ff;
+  text-decoration: underline;
+}
+
+/* 6) Botões: garantir texto branco e fundos suficientemente escuros */
+button, .btn, a.button, input[type="submit"], input[type="button"]{
+  color: #ffffff !important;
+}
+button:hover, .btn:hover, a.button:hover, input[type="submit"]:hover, input[type="button"]:hover{
+  filter: brightness(1.05);
+}
+
+/* 7) Foco visível consistente (teclado) */
+:focus-visible{
+  outline: 3px solid var(--ss-focus);
+  outline-offset: 3px;
+}
+
+/* 8) Texto por cima de imagens dentro de cards (nome do astro) */
+.astro-name, .planet-name, .label-on-photo, .photo-label, .overlay-label{
+  background: rgba(0,0,0,.55) !important;
+  color: #fff !important;
+}
+
+/* 9) Caso existam secções com fundo de imagem e texto direto */
+.section, section, main{
+  color: var(--ss-text);
+}

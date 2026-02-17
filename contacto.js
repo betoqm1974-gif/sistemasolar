@@ -74,38 +74,73 @@
   const rec = new SR();
   rec.lang = "pt-PT";
   rec.interimResults = true;
-  rec.continuous = false;
+  rec.continuous = true; // mantém a escuta ativa, mesmo com pequenas pausas
 
   let listening = false;
+  let manualStop = false;
+
+  // Buffers para evitar duplicações (problema típico com interimResults)
+  let baseText = "";
+  let finalBuffer = "";
+
   function setStatus(t){ if(statusEl) statusEl.textContent = t; }
 
+  function normalizeSpaces(s){
+    return (s || "").replace(/\s+/g, " ").trim();
+  }
+
+  function start(){
+    manualStop = false;
+    baseText = normalizeSpaces(target.value);
+    finalBuffer = "";
+    listening = true;
+    setStatus("A ouvir… (clique novamente para parar)");
+    try{ rec.start(); }catch(_){}
+    try{ if (window.__TTS && window.__TTS.speakFemale) window.__TTS.speakFemale("Ditado iniciado."); }catch(_){}
+  }
+
+  function stop(){
+    manualStop = true;
+    listening = false;
+    setStatus("A parar…");
+    try{ rec.stop(); }catch(_){}
+  }
+
   btn.addEventListener("click", ()=>{
-    try{
-      if(!listening){
-        listening = true;
-        setStatus("A ouvir…");
-        rec.start();
-        try{ if (window.__TTS && window.__TTS.speakFemale) window.__TTS.speakFemale("Ditado iniciado."); }catch(_){}
-      }else{
-        rec.stop();
-      }
-    }catch(e){}
+    if(!listening) start();
+    else stop();
   });
 
   rec.onresult = (ev)=>{
-    let text = "";
+    let interim = "";
     for (let i=ev.resultIndex; i<ev.results.length; i++){
-      text += ev.results[i][0].transcript;
+      const r = ev.results[i];
+      const transcript = (r[0] && r[0].transcript) ? r[0].transcript : "";
+      if(r.isFinal){
+        finalBuffer = normalizeSpaces(finalBuffer + " " + transcript);
+      }else{
+        interim = normalizeSpaces(interim + " " + transcript);
+      }
     }
-    target.value = (target.value ? target.value + " " : "") + text.trim();
+    const combined = normalizeSpaces([baseText, finalBuffer, interim].filter(Boolean).join(" "));
+    target.value = combined;
   };
+
   rec.onend = ()=>{
+    // Se terminou por silêncio e o utilizador não pediu para parar, recomeça.
+    if(listening && !manualStop){
+      setStatus("A ouvir…");
+      try{ rec.start(); }catch(_){}
+      return;
+    }
     listening = false;
     setStatus("Ditado terminado.");
     try{ if (window.__TTS && window.__TTS.speakFemale) window.__TTS.speakFemale("Ditado terminado."); }catch(_){}
   };
-  rec.onerror = ()=>{
+
+  rec.onerror = (e)=>{
     listening = false;
+    manualStop = true;
     setStatus("Erro no ditado. Verifique permissões do microfone.");
   };
 })();
