@@ -9,13 +9,13 @@
 <link href="favicon.ico" rel="icon" sizes="any"/>
 <link href="favicon.png" rel="icon" type="image/png"/>
 <meta content="Página de detalhe do planeta com curiosidades e imagem real da NASA." name="description"/>
-<link href="styles.css?v=lin1" rel="stylesheet"/>
+<link href="styles.css?v=apm1" rel="stylesheet"/>
 </head>
 <body>
 <a class="skip-link" href="#conteudo">Saltar para o conteúdo</a>
 <header class="header">
 <nav class="wrap nav" aria-label="Barra de navegação principal">
-<a aria-label="Início" class="brand" href="index.html">
+<a class="brand" href="index.html">
 <img alt="" aria-hidden="true" src="images/logo.png"/>
 <span class="brand-text">Sistema Solar</span>
 </a>
@@ -32,10 +32,8 @@
 <div class="controls-row"><button aria-label="Desativar leitura em voz" aria-pressed="true" class="btn" id="ttsToggle" type="button">Leitura: ligada</button>
 <span aria-hidden="true" class="sep">|</span>
 <div aria-label="Tamanho do texto" class="font-controls" id="fontControls" role="group">
-<button aria-label="Texto normal" aria-pressed="true" class="btn" data-font="1" type="button">A</button>
-<button aria-label="Texto grande" aria-pressed="false" class="btn" data-font="2" type="button">AA</button>
-<button aria-label="Texto muito grande" aria-pressed="false" class="btn" data-font="3" type="button">AAA</button>
-</nav>
+<button class="btn" type="button" data-font-step="-1" aria-label="Diminuir tamanho do texto">A-</button>
+<button class="btn" type="button" data-font-step="1" aria-label="Aumentar tamanho do texto">A+</button>
 </div>
 </div>
 </header>

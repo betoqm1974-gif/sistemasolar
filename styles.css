@@ -2439,3 +2439,10 @@ input[type="reset"],
   position: relative;
   z-index: 1;
 }
+
+/* FIX_FONT_PLUS_MINUS: novos botões A- / A+ */
+.font-controls{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}

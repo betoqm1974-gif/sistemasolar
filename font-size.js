@@ -18,10 +18,24 @@
   }
 
   document.addEventListener("click", (e)=>{
+    const stepBtn = e.target.closest("button[data-font-step]");
+    if(stepBtn){
+      const step = parseInt(stepBtn.getAttribute("data-font-step"),10) || 0;
+      const cur = localStorage.getItem(KEY) || "1";
+      const idx = Math.max(0, Math.min(levels.length-1, levels.indexOf(String(cur))));
+      const next = levels[Math.max(0, Math.min(levels.length-1, idx + step))];
+      apply(next);
+      try{
+        if (window.__TTS_CLICK__ && window.__TTS_CLICK__.speakForce){
+          const msg = step < 0 ? "Diminuir tamanho do texto" : "Aumentar tamanho do texto";
+          window.__TTS_CLICK__.speakForce(msg);
+        }
+      }catch(_){}
+      return;
+    }
     const btn = e.target.closest("button[data-font]");
     if(!btn) return;
     apply(btn.getAttribute("data-font"));
-    // feedback sonoro se existir TTS
     try{
       if (window.__TTS_CLICK__ && window.__TTS_CLICK__.speakForce){
         const msg = btn.getAttribute("data-font")==="1" ? "Texto normal" :
