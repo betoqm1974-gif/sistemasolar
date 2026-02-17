@@ -2336,3 +2336,77 @@ header nav a:focus-visible{
   outline: 3px solid #ffffff;
   outline-offset: 3px;
 }
+
+/* FIX_MENU_LOGO_TRANSPARENT: remover fundo preto do logo e do menu principal */
+header .logo, header .brand, header .site-logo, .logo, .brand, .site-logo{
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Menu principal (links) sem fundo preto */
+header nav a, header .wrap.nav a, nav.wrap.nav a{
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  padding: 0.35rem 0.55rem; /* mantém área clicável */
+  border-radius: 0.35rem;
+}
+
+/* Hover/focus no menu: mantém efeito, mas sem “caixa” preta */
+header nav a:hover, header nav a:focus-visible,
+header .wrap.nav a:hover, header .wrap.nav a:focus-visible,
+nav.wrap.nav a:hover, nav.wrap.nav a:focus-visible{
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+  text-decoration: none;
+}
+
+/* FIX_BUTTON_BORDER_WHITE: restantes botões com contorno branco */
+button,
+.btn,
+a.button,
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+.read-btn,
+.btn-ler,
+.btn-audio,
+.btn-audiodescricao,
+.btn-close,
+.btn-topo{
+  border: 2px solid #ffffff !important;
+}
+
+/* FIX_FONT_SIZE_GAP_AAA: mais espaço entre os botões A / AA / AAA */
+.fontsize-controls,
+.text-size-controls,
+.a11y-font-controls{
+  gap: 10px !important;
+}
+
+.fontsize-controls button,
+.text-size-controls button,
+.a11y-font-controls button,
+#btnA, #btnAA, #btnAAA{
+  margin-right: 10px !important;
+}
+
+/* Evitar margem extra no último */
+.fontsize-controls button:last-child,
+.text-size-controls button:last-child,
+.a11y-font-controls button:last-child{
+  margin-right: 0 !important;
+}
+
+/* FIX_FONT_GAP_V2: espaçamento entre A / AA / AAA */
+.font-controls{
+  display: inline-flex !important;
+  align-items: center;
+  gap: 10px !important;
+}
+.font-controls .btn{
+  margin: 0 !important;
+}
