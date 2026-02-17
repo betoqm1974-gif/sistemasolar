@@ -2411,65 +2411,31 @@ input[type="reset"],
   margin: 0 !important;
 }
 
-/* FIX_WCAG_AA_PACK: melhorias WCAG nível AA */
 
-/* Skip link (Saltar para conteúdo) */
-.skip-link{
-  position: absolute;
-  left: 12px;
-  top: 10px;
-  transform: translateY(-200%);
-  background: #000;
-  color: #fff;
-  padding: 10px 12px;
-  border: 2px solid #fff;
-  border-radius: 8px;
-  z-index: 9999;
-  font-weight: 700;
-}
-.skip-link:focus{
-  transform: translateY(0);
+/* FIX_INDEX_IMAGE_BORDER_OFF: remover contorno branco do botão/miniatura da imagem principal no índice */
+.intro-figure .photo-thumb{
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
 }
 
-/* Foco visível consistente para teclado */
-:focus-visible{
-  outline: 3px solid #ffd54d;
-  outline-offset: 3px;
-}
-
-/* Reduzir movimento quando o utilizador pede */
-@media (prefers-reduced-motion: reduce){
-  *{
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-}
-
-/* Reflow: evitar scroll horizontal em mobile */
-img, video, iframe{
-  max-width: 100%;
-  height: auto;
-}
-.wrap, .container, main{
+/* FIX_FACT_TEXT_STRIP: faixa preta semi-transparente atrás do texto nas curiosidades rápidas */
+.facts .fact h3,
+.facts .fact p{
+  background: rgba(0,0,0,.58);
+  padding: 8px 10px;
+  border-radius: 10px;
+  display: inline-block;
   max-width: 100%;
 }
-table{
-  max-width: 100%;
-}
-.popup, .modal, .modal-content, .popup-content{
-  max-width: min(900px, 95vw) !important;
-  max-height: 90vh !important;
-}
 
-/* Melhorar contraste APENAS em textos sobre imagens (sem alterar o resto do tema) */
-.photo-label, .overlay-label, .astro-name, .planet-name{
-  background: rgba(0,0,0,.55);
-  color: #fff;
+/* garantir que o texto fica acima do overlay de fundo */
+.facts .fact{
+  position: relative;
 }
-
-/* Links: sublinhado no hover/focus (ajuda cognitivo e AA) */
-a:hover, a:focus-visible{
-  text-decoration: underline;
+.facts .fact h3,
+.facts .fact p{
+  position: relative;
+  z-index: 1;
 }
