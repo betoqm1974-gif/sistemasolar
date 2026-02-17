@@ -2283,74 +2283,56 @@ textarea{
   line-height: 1.2;
 }
 
-/* FIX_CONTRAST_001: melhorias de contraste (WCAG AA) */
-
-/* 1) Texto sobre fundos com imagem/galáxia: dar base mais escura */
-:root{
-  --ss-overlay: rgba(0,0,0,.45);
-  --ss-panel: rgba(0,0,0,.55);
-  --ss-panel-strong: rgba(0,0,0,.68);
-  --ss-text: #ffffff;
-  --ss-muted: rgba(255,255,255,.88);
-  --ss-link: #bfe6ff; /* mais claro */
-  --ss-focus: #ffd54d; /* amarelo visível */
-}
-
-/* 2) Garantir cor do texto por defeito em áreas com fundo escuro */
-body{
-  color: var(--ss-text);
-}
-
-/* 3) Cartões, tabelas e caixas translúcidas: aumentar opacidade */
-.card, .card-inner, .tile, .panel, .box, .table-box,
-.video-card, .photo-card, .planet-card,
-.popup, .modal, .modal-content, .popup-content{
-  background: var(--ss-panel) !important;
-  color: var(--ss-text) !important;
-}
-
-/* Onde existam fundos demasiado transparentes */
-.card *, .video-card *, .photo-card *, .planet-card *,
-.popup *, .modal *{
-  color: inherit;
-}
-
-/* 4) Descrições curtas/legendas (às vezes aparecem em azul) */
-small, .hint, .helper-text, .subtitle, .caption, .note,
-#mediaHint, #photosHint, .media-hint, .photos-hint{
-  color: var(--ss-muted) !important;
-}
-
-/* 5) Links e estados hover com contraste */
-a{
-  color: var(--ss-link);
-}
-a:hover, a:focus{
-  color: #e6f6ff;
-  text-decoration: underline;
-}
-
-/* 6) Botões: garantir texto branco e fundos suficientemente escuros */
-button, .btn, a.button, input[type="submit"], input[type="button"]{
+/* FIX_BTN_STYLE_BLACK: todos os botões com fundo preto e letra branca a negrito */
+button,
+.btn,
+a.button,
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+.read-btn,
+.btn-ler,
+.btn-audio,
+.btn-audiodescricao,
+.btn-close,
+.btn-topo,
+.nav a,
+nav a,
+header nav a{
+  background: #000000 !important;
   color: #ffffff !important;
-}
-button:hover, .btn:hover, a.button:hover, input[type="submit"]:hover, input[type="button"]:hover{
-  filter: brightness(1.05);
+  font-weight: 700 !important;
+  border-color: #000000 !important;
 }
 
-/* 7) Foco visível consistente (teclado) */
-:focus-visible{
-  outline: 3px solid var(--ss-focus);
+/* estados hover/focus: ligeiro realce mantendo contraste */
+button:hover,
+.btn:hover,
+a.button:hover,
+input[type="button"]:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+.read-btn:hover,
+.btn-ler:hover,
+.btn-audio:hover,
+.btn-audiodescricao:hover,
+.btn-close:hover,
+.btn-topo:hover,
+.nav a:hover,
+nav a:hover,
+header nav a:hover{
+  filter: brightness(1.12);
+}
+
+button:focus-visible,
+.btn:focus-visible,
+a.button:focus-visible,
+input[type="button"]:focus-visible,
+input[type="submit"]:focus-visible,
+input[type="reset"]:focus-visible,
+.nav a:focus-visible,
+nav a:focus-visible,
+header nav a:focus-visible{
+  outline: 3px solid #ffffff;
   outline-offset: 3px;
-}
-
-/* 8) Texto por cima de imagens dentro de cards (nome do astro) */
-.astro-name, .planet-name, .label-on-photo, .photo-label, .overlay-label{
-  background: rgba(0,0,0,.55) !important;
-  color: #fff !important;
-}
-
-/* 9) Caso existam secções com fundo de imagem e texto direto */
-.section, section, main{
-  color: var(--ss-text);
 }
