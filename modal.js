@@ -51,7 +51,8 @@
     panel.classList.remove("modal-xl");
     bodyEl.innerHTML = "";
     setScale(1);
-    if(lastFocus && lastFocus.focus) lastFocus.focus();
+    try{ if(document.activeElement && document.activeElement.blur) document.activeElement.blur(); }catch(_){ }
+    lastFocus = null;
   }
 
   function openModal({type, src, title, desc, alt, size}){

@@ -2913,3 +2913,10 @@ button.has-tooltip-below::after{
   background-color: #f4b546 !important;
 }
 
+/* FIX-FOTOS-HOVER: retângulo semi-transparente por baixo do nome fica verde no hover/foco (Multimédia) */
+.photo-card:hover figcaption.card-pad::before,
+.photo-card:focus-within figcaption.card-pad::before,
+.media-card:hover figcaption.card-pad::before,
+.media-card:focus-within figcaption.card-pad::before{
+  background: rgba(0, 150, 70, 0.70) !important;
+}

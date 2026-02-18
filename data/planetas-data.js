@@ -15,7 +15,7 @@ window.PLANETAS = [
     id:"venus",
     nome:"Vénus",
     tipo:"Rochoso",
-    imagem:"images/Venus.png",
+    imagem:"images/venus.png",
     alt:"Disco de Vénus com tonalidades claras, observado contra fundo escuro.",
     curiosidades:[
       "Atmosfera densa e quente; a superfície é a mais quente do Sistema Solar.",
@@ -39,7 +39,7 @@ window.PLANETAS = [
     id:"marte",
     nome:"Marte",
     tipo:"Rochoso",
-    imagem:"images/Marte.png",
+    imagem:"images/marte.png",
     alt:"Marte em tons alaranjados, com detalhes de nuvens e regiões polares, sobre fundo negro.",
     curiosidades:[
       "Tem paisagens rochosas e calotes polares; é alvo de missões espaciais.",
