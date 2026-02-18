@@ -384,7 +384,7 @@ header{position:relative}
 /* Página inicial: texto e blocos */
 .lead{font-size:1.18rem; line-height:1.75}
 .facts{display:grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap:1rem}
-.fact{border:1px solid rgba(255,255,255,.14); border-radius:16px; background: rgba(10,12,20,.30); padding:1rem}
+.fact{border:1px solid rgba(255,255,255,.25); border-radius:16px; background: rgba(10,12,20,.30); padding:1rem}
 @media (max-width: 900px){ .facts{grid-template-columns: 1fr} }
 
 /* Home: imagem final */
@@ -1025,9 +1025,8 @@ body{ overflow-x: hidden; }
 
 /* Foco muito visível para navegação por teclado */
 :focus-visible{
-  outline: 3px solid #00ffb3;
-  outline-offset: 3px;
-}
+  outline: none;
+  }
 
 /* Garantir que links/botões mantêm foco */
 a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible{
@@ -1100,7 +1099,8 @@ button, .btn, nav a{
 .planets-grid{
   display:grid;
   gap: 16px;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
 }
 @media (min-width: 1100px){
   .planets-grid{ grid-template-columns: repeat(4, 1fr); }
@@ -1155,9 +1155,8 @@ button, .btn, nav a{
 .planet-thumb:focus-visible{
   filter: brightness(1.08);
   transform: translateY(-1px);
-  outline: 3px solid #00ffb3;
-  outline-offset: 3px;
-}
+  outline: none;
+  }
 
 a.say.is-hover,
 a.say:hover,
@@ -1183,8 +1182,7 @@ a.say:focus-visible{
   filter: brightness(1.08);
   transform: translateY(-1px);
   outline: 3px solid #ff6b2d;
-  outline-offset: 3px;
-}
+  }
 
 /* FIX136: efeitos hover/foco (Home + botões) */
 .hero-image button.is-hover,
@@ -1192,9 +1190,8 @@ a.say:focus-visible{
 .hero-image button:focus-visible{
   filter: brightness(1.08);
   transform: translateY(-1px);
-  outline: 3px solid #00ffb3;
-  outline-offset: 3px;
-}
+  outline: none;
+  }
 
 .fact{
   transition: transform .10s ease, filter .10s ease;
@@ -1204,9 +1201,8 @@ a.say:focus-visible{
 .fact:focus-within{
   filter: brightness(1.06);
   transform: translateY(-1px);
-  outline: 3px solid #00ffb3;
-  outline-offset: 3px;
-}
+  outline: none;
+  }
 
 /* Botões (inclui Ler) com efeito laranja/vermelho */
 .btn,
@@ -1223,8 +1219,7 @@ a.say:focus-visible{
   filter: brightness(1.08);
   transform: translateY(-1px);
   outline: 3px solid #ff6b2d;
-  outline-offset: 3px;
-}
+  }
 
 /* FIX137: Index imagem principal (photo-thumb) — efeito verde */
 .photo-thumb{
@@ -1235,9 +1230,8 @@ a.say:focus-visible{
 .photo-thumb:focus-visible{
   filter: brightness(1.08);
   transform: translateY(-1px);
-  outline: 3px solid #00ffb3;
-  outline-offset: 3px;
-}
+  outline: none;
+  }
 
 /* Planetas: texto da curiosidade ao centro + limitar a 3 linhas */
 
@@ -1257,7 +1251,7 @@ button.photo-thumb:hover,
 button.photo-thumb:focus-visible{
   filter: brightness(1.10);
   transform: translateY(-1px);
-  outline: 3px solid #00ffb3;
+  outline: none;
   outline-offset: 4px;
 }
 
@@ -1285,7 +1279,7 @@ button.photo-thumb:hover,
 button.photo-thumb:focus-visible{
   filter: brightness(1.10);
   transform: translateY(-1px);
-  box-shadow: 0 0 0 3px #00ffb3;
+  box-shadow: 0 0 0 3px #FFB21D;
 }
 button.photo-thumb img{
   transition: transform .10s ease, filter .10s ease;
@@ -1326,7 +1320,7 @@ button.photo-thumb:focus-visible img{
 .photo-thumb:focus-visible{
   filter: brightness(1.08);
   transform: translateY(-1px);
-  box-shadow: 0 0 0 3px #00ffb3;
+  box-shadow: 0 0 0 3px #FFB21D;
 }
 
 /* FIX149: Multimédia — Audiodescrição centrada (sem remover miniaturas/vídeos) */
@@ -1465,8 +1459,7 @@ nav a:hover, nav a:focus-visible,
 .video-thumb:hover{ filter: brightness(1.05); }
 .video-thumb:focus-visible{
   outline: 3px solid rgba(0,255,180,0.75);
-  outline-offset: 3px;
-}
+  }
 
 /* Texto dos cartões: ocupar largura e ficar enquadrado */
 .video-card .video-desc{
@@ -2334,8 +2327,7 @@ input[type="reset"]:focus-visible,
 nav a:focus-visible,
 header nav a:focus-visible{
   outline: 3px solid #ffffff;
-  outline-offset: 3px;
-}
+  }
 
 /* FIX_MENU_LOGO_TRANSPARENT: remover fundo preto do logo e do menu principal */
 header .logo, header .brand, header .site-logo, .logo, .brand, .site-logo{
@@ -2529,14 +2521,12 @@ input[type="reset"],
 .skip-link:focus-visible{
   transform:translateY(0);
   outline:2px solid #f4b546;
-  outline-offset:3px;
-}
+  }
 
 /* foco visível consistente */
 a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible{
   outline: 2px solid #f4b546;
-  outline-offset: 3px;
-}
+  }
 
 /* evitar “saltos”/movimentos em hover */
 a:hover, button:hover{
@@ -2668,8 +2658,7 @@ button.has-tooltip-below:focus-visible::before{
 /* Foco visível acessível */
 .nav nav a:focus-visible{
   outline: 3px solid var(--focus);
-  outline-offset: 3px;
-}
+  }
 
 
 /* FIX-MENU-OVERRIDE: garantir cor laranja no hover e no item ativo */
@@ -2738,8 +2727,7 @@ button.has-tooltip-below:focus-visible::before{
 .header nav a:focus-visible,
 .header .nav nav a:focus-visible{
   outline: 3px solid var(--focus);
-  outline-offset: 3px;
-}
+  }
 
 
 /* FIX-LUPA-COR: cor do ícone 🔍− / 🔍+ */
@@ -2913,10 +2901,127 @@ button.has-tooltip-below::after{
   background-color: #f4b546 !important;
 }
 
-/* FIX-FOTOS-HOVER: retângulo semi-transparente por baixo do nome fica verde no hover/foco (Multimédia) */
-.photo-card:hover figcaption.card-pad::before,
-.photo-card:focus-within figcaption.card-pad::before,
-.media-card:hover figcaption.card-pad::before,
-.media-card:focus-within figcaption.card-pad::before{
-  background: rgba(0, 150, 70, 0.70) !important;
+
+/* PLANETAS redesign: nome sobre a imagem (canto inferior esquerdo) e tipo (canto superior direito) */
+.planet-thumb{
+  position: relative;
+  display: block;
+}
+.planet-name-overlay{
+  position: absolute;
+  left: .75rem;
+  bottom: .75rem;
+  padding: .35rem .6rem;
+  border-radius: .6rem;
+  background: rgba(0,0,0,.55);
+  color: #fff;
+  font-weight: 800;
+  letter-spacing: .02em;
+  text-transform: uppercase;
+  font-size: 1.15rem;
+  line-height: 1;
+  pointer-events: none;
+}
+.planet-type-overlay{
+  position: absolute;
+  right: .75rem;
+  top: .75rem;
+  background: rgba(0,0,0,.85); /* fundo opaco para contraste */
+  color: #fff;
+  border: 2px solid rgba(255,255,255,.85);
+}
+
+/* PLANETAS: 2 colunas e cartões maiores */
+.planets-grid{
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+.planets-grid img{
+  height: 260px;
+}
+@media (max-width: 520px){
+  .planets-grid{
+    grid-template-columns: 1fr;
+  }
+  .planets-grid img{
+    height: 240px;
+  }
+}
+
+/* PLANETAS: efeito visual de cor no hover/foco (não cortado por overflow) */
+.planets-grid .planet-thumb{
+  position: relative;
+  display: block;
+  border-radius: 14px;
+  overflow: hidden;
+}
+.planets-grid .planet-thumb::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #FFB21D;
+  opacity: 0;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  transition: opacity .25s ease;
+}
+.planets-grid .planet-thumb::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 3px solid #FFB21D;
+  opacity: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  transition: opacity .25s ease;
+}
+.planets-grid .planet-thumb:hover::before,
+.planets-grid .planet-thumb:focus-visible::before,
+.planets-grid .planet-thumb:focus-within::before{
+  opacity: .22;
+}
+.planets-grid .planet-thumb:hover::after,
+.planets-grid .planet-thumb:focus-visible::after,
+.planets-grid .planet-thumb:focus-within::after{
+  opacity: 1;
+}
+.planets-grid .planet-thumb:hover img,
+.planets-grid .planet-thumb:focus-visible img,
+.planets-grid .planet-thumb:focus-within img{
+  filter: saturate(1.15) contrast(1.05);
+}
+
+/* HOME: Curiosidades rápidas com o mesmo efeito de cor/borda dos Planetas */
+.facts .fact{
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+}
+.facts .fact::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #FFB21D;
+  opacity: 0;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  transition: opacity .25s ease;
+}
+.facts .fact::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 3px solid #FFB21D;
+  opacity: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  transition: opacity .25s ease;
+}
+.facts .fact:hover::before,
+.facts .fact:focus-within::before{
+  opacity: .22;
+}
+.facts .fact:hover::after,
+.facts .fact:focus-within::after{
+  opacity: 1;
 }

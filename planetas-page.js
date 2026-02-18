@@ -21,20 +21,25 @@ function render(){
     const card = document.createElement("article");
     card.className = "card";
     card.setAttribute("role","listitem");
-    
+    card.dataset.name = p.nome;
+
     card.innerHTML = `
       <a class="planet-thumb" href="planeta.html?id=${encodeURIComponent(p.id)}" aria-label="${p.nome}">
         <img src="${p.imagem}" alt="${p.alt}">
+        <span class="badge planet-type planet-type-overlay" tabindex="0" role="button" aria-label="${p.tipo}">${p.tipo}</span>
+        <span class="planet-name-overlay" aria-hidden="true">${p.nome}</span>
       </a>
-      <div class="pad">
-        <span class="badge planet-type" tabindex="0" role="button" aria-label="${p.tipo}">${p.tipo}</span>
-        <h2 style="margin:.6rem 0">
-          <a href="planeta.html?id=${encodeURIComponent(p.id)}">${p.nome}</a>
-        </h2>
-        <p class="no-read">${p.curiosidades[0]}</p>
-        <p class="small no-read"><a class="btn say" data-say="Ver detalhes" href="planeta.html?id=${encodeURIComponent(p.id)}">Ver detalhes</a></p>
-      </div>
     `;
+
+    // Hover do "tipo" com voz (mantém comportamento atual)
+    const typeEl = card.querySelector(".planet-type");
+    if(typeEl){
+      typeEl.addEventListener("mouseenter", ()=>{
+        if(window.__TTS && window.__TTS.isEnabled && window.__TTS.isEnabled()){
+          window.__TTS.toggleSpeak(p.tipo, false);
+        }
+      });
+    }
 
     lista.appendChild(card);
   });
@@ -55,7 +60,7 @@ function render(){
 
   // Delegação: cards
   lista.querySelectorAll(".card").forEach(card=>{
-    const name = (card.querySelector("h2 a")?.textContent || "").trim();
+    const name = (card.dataset.name || card.querySelector(".planet-name-overlay")?.textContent || card.querySelector("h2 a")?.textContent || "").trim();
     const thumb = card.querySelector(".planet-thumb");
     const badge = card.querySelector(".planet-type");
     if(thumb){
