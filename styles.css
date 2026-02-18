@@ -1,6 +1,6 @@
 :root{
   --bg:#0b1020; --fg:#eef2ff; --muted:#b8c0ff;
-  --card:#121a33; --focus:#ffd54a;
+  --card:#121a33; --focus:#f4b546;
   --max: 1100px;
 }
 *{box-sizing:border-box}
@@ -1745,7 +1745,7 @@ nav a:hover, nav a:focus-visible,
 /* FIX201: ampliar ligeiramente a imagem de Neptuno dentro da miniatura */
 img.zoom-neptuno{
   transform: scale(1.12);
-  transform-origin: center;
+  transform-origin: left;
 }
 
 /* FIX205: Fotos - botão Ler ao lado do título, ligeiro desvio à direita */
@@ -2037,17 +2037,17 @@ a.nav-home:focus-visible {
 
 
 /* cores base */
-.nav-home-svg .home-bg { fill: #FF9F1A; }
+.nav-home-svg .home-bg { fill: #FFB21D; }
 .nav-home-svg .home-house { fill: #FFFFFF; }
 .nav-home-svg .home-roof { stroke: #FFFFFF; }
-.nav-home-svg .home-door { fill: #FF9F1A; }
+.nav-home-svg .home-door { fill: #FFB21D; }
 /* hover/focus: troca apenas cores (mesmo SVG) */
 a.nav-home:hover .home-bg,
 a.nav-home:focus-visible .home-bg { fill: #FFFFFF; }
 a.nav-home:hover .home-house,
-a.nav-home:focus-visible .home-house { fill: #FF9F1A; }
+a.nav-home:focus-visible .home-house { fill: #FFB21D; }
 a.nav-home:hover .home-roof,
-a.nav-home:focus-visible .home-roof { stroke: #FF9F1A; }
+a.nav-home:focus-visible .home-roof { stroke: #FFB21D; }
 a.nav-home:hover .home-door,
 a.nav-home:focus-visible .home-door { fill: #FFFFFF; }
 
@@ -2071,17 +2071,17 @@ a.nav-home {
   display: block;
 }
 /* cores base */
-.nav-home-svg .home-bg { fill: #FF9F1A; }
+.nav-home-svg .home-bg { fill: #FFB21D; }
 .nav-home-svg .home-house { fill: #FFFFFF; }
 .nav-home-svg .home-roof { stroke: #FFFFFF; }
-.nav-home-svg .home-door { fill: #FF9F1A; }
+.nav-home-svg .home-door { fill: #FFB21D; }
 /* hover/focus: troca apenas cores (mesmo SVG) */
 a.nav-home:hover .home-bg,
 a.nav-home:focus-visible .home-bg { fill: #FFFFFF; }
 a.nav-home:hover .home-house,
-a.nav-home:focus-visible .home-house { fill: #FF9F1A; }
+a.nav-home:focus-visible .home-house { fill: #FFB21D; }
 a.nav-home:hover .home-roof,
-a.nav-home:focus-visible .home-roof { stroke: #FF9F1A; }
+a.nav-home:focus-visible .home-roof { stroke: #FFB21D; }
 a.nav-home:hover .home-door,
 a.nav-home:focus-visible .home-door { fill: #FFFFFF; }
 
@@ -2114,16 +2114,16 @@ a.nav-home {
   width:2.6rem;
   height:2.6rem;
 }
-.nav-home-svg .home-bg { fill: #FF9F1A; }
+.nav-home-svg .home-bg { fill: #FFB21D; }
 .nav-home-svg .home-house { fill: #FFFFFF; }
 .nav-home-svg .home-roof { stroke: #FFFFFF; stroke-width:6; }
-.nav-home-svg .home-door { fill: #FF9F1A; }
+.nav-home-svg .home-door { fill: #FFB21D; }
 a.nav-home:hover .home-bg,
 a.nav-home:focus-visible .home-bg { fill: #FFFFFF; }
 a.nav-home:hover .home-house,
-a.nav-home:focus-visible .home-house { fill: #FF9F1A; }
+a.nav-home:focus-visible .home-house { fill: #FFB21D; }
 a.nav-home:hover .home-roof,
-a.nav-home:focus-visible .home-roof { stroke: #FF9F1A; }
+a.nav-home:focus-visible .home-roof { stroke: #FFB21D; }
 a.nav-home:hover .home-door,
 a.nav-home:focus-visible .home-door { fill: #FFFFFF; }
 
@@ -2131,13 +2131,13 @@ a.nav-home:focus-visible .home-door { fill: #FFFFFF; }
 a.nav-home{display:inline-flex;align-items:center;justify-content:center;min-width:3.3rem;line-height:1;background:none!important}
 .nav-home-icon{display:inline-flex;width:2.6rem;height:2.6rem}
 .nav-home-svg{display:block;width:2.6rem;height:2.6rem}
-.nav-home-svg .home-bg{fill:#FF9F1A}
+.nav-home-svg .home-bg{fill:#FFB21D}
 .nav-home-svg .home-house{fill:#FFFFFF}
 .nav-home-svg .home-roof{stroke:#FFFFFF;stroke-width:6}
-.nav-home-svg .home-door{fill:#FF9F1A}
+.nav-home-svg .home-door{fill:#FFB21D}
 a.nav-home:hover .home-bg,a.nav-home:focus-visible .home-bg{fill:#FFFFFF}
-a.nav-home:hover .home-house,a.nav-home:focus-visible .home-house{fill:#FF9F1A}
-a.nav-home:hover .home-roof,a.nav-home:focus-visible .home-roof{stroke:#FF9F1A}
+a.nav-home:hover .home-house,a.nav-home:focus-visible .home-house{fill:#FFB21D}
+a.nav-home:hover .home-roof,a.nav-home:focus-visible .home-roof{stroke:#FFB21D}
 a.nav-home:hover .home-door,a.nav-home:focus-visible .home-door{fill:#FFFFFF}
 
 /* FIX262: tooltip/balão no hover/focus (Home) */
@@ -2467,7 +2467,7 @@ input[type="reset"],
 }
 /* foco por teclado (acessibilidade) */
 .brand:focus-visible{
-  outline: 2px solid #FFD54A !important;
+  outline: 2px solid #f4b546 !important;
   outline-offset: 3px !important;
   border-radius: 3px !important;
 }
@@ -2477,10 +2477,10 @@ input[type="reset"],
 .main-nav a:hover,
 .main-nav a:focus,
 .main-nav a:focus-visible{
-  color: #FFD54A !important;
+  color: #f4b546 !important;
 }
 .main-nav a[aria-current="page"]{
-  color: #FFD54A !important;
+  color: #f4b546 !important;
 }
 /* evitar movimentos no hover */
 .main-nav a:hover,
@@ -2500,14 +2500,14 @@ input[type="reset"],
 .main-nav a:hover,
 .main-nav a:focus,
 .main-nav a:focus-visible{
-  color: #FF9F1A !important;
+  color: #FFB21D !important;
 }
 .main-nav a[aria-current="page"]{
-  color: #FF9F1A !important;
+  color: #FFB21D !important;
 }
 /* opcional: também realça durante o clique */
 .main-nav a:active{
-  color: #FF9F1A !important;
+  color: #FFB21D !important;
 }
 
 
@@ -2528,13 +2528,13 @@ input[type="reset"],
 .skip-link:focus,
 .skip-link:focus-visible{
   transform:translateY(0);
-  outline:2px solid #FFD54A;
+  outline:2px solid #f4b546;
   outline-offset:3px;
 }
 
 /* foco visível consistente */
 a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible{
-  outline: 2px solid #FFD54A;
+  outline: 2px solid #f4b546;
   outline-offset: 3px;
 }
 
@@ -2573,7 +2573,7 @@ button.has-tooltip-below::after{
   line-height: 1;
   padding: 0.42rem 0.7rem;
   border-radius: 0.6rem;
-  background: #FF9F1A;
+  background: #f4b546;
   color: #111;
   white-space: nowrap;
   opacity: 0;
@@ -2589,7 +2589,7 @@ button.has-tooltip-below::before{
   transform: translateX(-50%) rotate(45deg);
   width: 0.55rem;
   height: 0.55rem;
-  background: #FF9F1A;
+  background: #f4b546;
   opacity: 0;
   pointer-events: none;
   transition: opacity 120ms ease;
@@ -2611,3 +2611,305 @@ button.has-tooltip-below:focus-visible::before{
     display:none;
   }
 }
+
+/* FIX-MENU: itens brancos; hover/focus laranja; ativo (aria-current) mantém laranja */
+.nav nav{
+  gap: 2.2rem;               /* mais espaçamento entre itens */
+}
+
+.nav nav a{
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 64px;
+  padding: 0 1.15rem;
+  border-radius: 0;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: .06em;
+  color: #fff;
+  background: transparent;
+  transition: color 140ms ease;
+}
+
+/* Hover/focus: texto laranja */
+.nav nav a:hover,
+.nav nav a:focus-visible{
+  color: #FFB21D;
+  background: transparent;
+}
+
+/* Ativo: texto laranja permanente */
+.nav nav a[aria-current="page"]{
+  color: #FFB21D;
+}
+
+/* Sublinhado laranja no hover/focus e no ativo */
+.nav nav a::after{
+  content:"";
+  position:absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 4px;
+  background: #f4b546;
+  /* animação esquerda→direita (mais perceptível) */
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path 360ms ease;
+}
+
+.nav nav a:hover::after,
+.nav nav a:focus-visible::after,
+.nav nav a[aria-current="page"]::after{
+  clip-path: inset(0 0 0 0);
+}
+
+/* Foco visível acessível */
+.nav nav a:focus-visible{
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+
+
+/* FIX-MENU-OVERRIDE: garantir cor laranja no hover e no item ativo */
+.header .nav nav a,
+.header nav a {
+  color: #fff !important;
+}
+
+.header .nav nav a:hover,
+.header .nav nav a:focus-visible,
+.header nav a:hover,
+.header nav a:focus-visible {
+  color: #FFB21D !important;
+}
+
+.header .nav nav a[aria-current="page"],
+.header nav a[aria-current="page"] {
+  color: #FFB21D !important;
+}
+
+
+/* FIX-MENU-UNDERLINE: animação da esquerda para a direita */
+.header .nav nav a::after,
+.header nav a::after{
+  transform-origin: left !important;
+}
+
+
+/* FIX-MENU-UNDERLINE-L2R: reforço (clip-path) */
+.header .nav nav a::after{
+  clip-path: inset(0 100% 0 0);
+}
+.header .nav nav a:hover::after,
+.header .nav nav a:focus-visible::after,
+.header .nav nav a[aria-current="page"]::after{
+  clip-path: inset(0 0 0 0);
+}
+
+
+/* FIX-MENU-HOVER: remover retângulo arredondado no hover (mantém só o sublinhado) */
+.header .nav nav a:hover,
+.header .nav nav a:focus-visible,
+.header nav a:hover,
+.header nav a:focus-visible{
+  background: transparent !important;
+  box-shadow: none !important;
+  border-color: transparent !important;
+  border-radius: 0 !important;
+}
+
+
+/* FIX-MENU-HOVER2: eliminar qualquer caixa no hover (sem fundo/borda/sombra) */
+.header nav a:hover,
+.header .nav nav a:hover,
+.header nav a:focus,
+.header .nav nav a:focus{
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+}
+
+/* manter foco acessível apenas em focus-visible (não no hover) */
+.header nav a:focus-visible,
+.header .nav nav a:focus-visible{
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+
+
+/* FIX-LUPA-COR: cor do ícone 🔍− / 🔍+ */
+button.has-tooltip-below::after{
+  color: #f4b546 !important;
+}
+
+
+/* FIX-MENU-HOVER3: remover totalmente qualquer "retângulo" no hover dos links do menu */
+nav a:hover{
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  filter: none !important;
+}
+
+
+/* FIX-MENU-HOVER3B: neutralizar regras antigas (hover) */
+nav a:hover, .main-nav a:focus-visible{
+  background: transparent !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+
+/* FIX-LUPA-FUNDO: fundo do balão das lupas (🔍− / 🔍+) */
+button.has-tooltip-below::after,
+button.has-tooltip-below::before{
+  background: #f4b546 !important;
+}
+/* Texto/ícone no balão */
+button.has-tooltip-below::after{
+  color: #fff !important;
+}
+
+
+/* FIX-LUPA-CORES: fundo f4b546 e símbolo preto */
+button.has-tooltip-below::after,
+button.has-tooltip-below::before{
+  background: #f4b546 !important;
+}
+button.has-tooltip-below::after{
+  color: #000 !important;
+}
+
+
+
+#fontControls button.has-tooltip-below::after{
+  color: #000 !important; /* símbolo preto */
+}
+
+
+/* FIX-LUPA-FUNDO-COR: manter comportamento (só aparece no hover/focus) e corrigir cor */
+#fontControls button.has-tooltip-below::after,
+#fontControls button.has-tooltip-below::before{
+  background-color: #f4b546 !important;
+  background: #f4b546 !important;
+}
+#fontControls button.has-tooltip-below::after{
+  color: #000 !important; /* símbolo preto */
+}
+
+
+/* FIX-MENU-BORDA-HOVER: remover a "moldura" branca no hover dos itens do menu */
+.header nav a:hover,
+.header .nav nav a:hover{
+  border: 0 !important;
+  border-color: transparent !important;
+  outline: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+/* Mantém foco acessível apenas em teclado */
+.header nav a:focus-visible,
+.header .nav nav a:focus-visible{
+  outline: 3px solid var(--focus) !important;
+  outline-offset: 3px !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+
+/* FIX-MENU-GAP: aproximar os itens do menu */
+.header .nav nav{
+  gap: 1rem !important;
+}
+
+
+/* FIX-MENU-GAP2: itens ainda mais juntos */
+.header .nav nav{
+  gap: 0.55rem !important;
+}
+
+
+/* FIX-BRAND-COR: texto 'SISTEMA SOLAR' com a cor do globo */
+.brand,
+.brand .brand-text,
+a.brand .brand-text{
+  color: #FFB21D !important;
+}
+
+
+
+
+/* FIX-HOME-LINHA: Home igual aos restantes itens do menu */
+.header a.nav-home{
+  color: #fff !important;
+}
+.header a.nav-home::after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  height:4px;
+  background: #f4b546;
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path 360ms ease;
+}
+.header a.nav-home:hover::after,
+.header a.nav-home:focus-visible::after,
+.header a.nav-home[aria-current="page"]::after{
+  clip-path: inset(0 0 0 0);
+}
+.header a.nav-home:hover,
+.header a.nav-home:focus-visible{
+  color: #FFB21D !important;
+}
+.header a.nav-home[aria-current="page"]{
+  color: #FFB21D !important;
+}
+
+
+/* FIX-TOOLTIPS-COR: todos os retângulos/balões de tooltip no hover com a cor #f4b546 */
+[data-tooltip]::after,
+[data-tooltip]::before,
+a.has-tooltip::after,
+a.has-tooltip::before,
+button.has-tooltip-below::after,
+button.has-tooltip-below::before{
+  background: #f4b546 !important;
+  background-color: #f4b546 !important;
+}
+/* Texto/ícones dentro do balão: preto para contraste */
+[data-tooltip]::after,
+a.has-tooltip::after,
+button.has-tooltip-below::after{
+  color: #000 !important;
+}
+
+
+/* FIX-MENU-COR: alterar cor do texto (hover/ativo) e da barra do menu para #f4b546 */
+.header .nav nav a:hover,
+.header .nav nav a:focus-visible,
+.header .nav nav a[aria-current="page"],
+.header a.nav-home:hover,
+.header a.nav-home:focus-visible,
+.header a.nav-home[aria-current="page"]{
+  color: #f4b546 !important;
+}
+
+.header .nav nav a::after,
+.header a.nav-home::after{
+  background: #f4b546 !important;
+  background-color: #f4b546 !important;
+}
+
