@@ -46,6 +46,9 @@
       if(el.__menuTTSBound) return;
       el.__menuTTSBound = true;
 
+      // FIX: evitar leitura duplicada em elementos que já têm leitura própria (ex.: A- / A+)
+      if(el.classList && (el.classList.contains("say") || el.hasAttribute("data-say"))) return;
+
       el.addEventListener("mouseenter", ()=>{ speakLabel(getLabel(el)); }, {passive:true});
       el.addEventListener("focus", ()=>{ speakLabel(getLabel(el)); }, {passive:true});
     });
