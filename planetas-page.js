@@ -5,6 +5,23 @@ const clearBtn = document.querySelector("#clearFilters");
 const q = document.querySelector("#q");
 const live = document.querySelector("#live");
 
+const PAGINAS_PLANETAS = {
+  mercurio: "mercurio.html",
+  jupiter: "jupiter.html",
+  terra: "terra.html",
+  urano: "urano.html",
+  marte: "marte.html",
+  venus: "venus.html",
+  saturno: "Saturno.html",
+  neptuno: "Neptuno.html"
+};
+
+function hrefPlaneta(id){
+  const key = String(id || "").toLowerCase();
+  return PAGINAS_PLANETAS[key] || ("planeta.html?id=" + encodeURIComponent(id));
+}
+
+
 function render(){
   const t = tipo.value;
   const term = q.value.trim().toLowerCase();
@@ -24,7 +41,7 @@ function render(){
     card.dataset.name = p.nome;
 
     card.innerHTML = `
-      <a class="planet-thumb" href="planeta.html?id=${encodeURIComponent(p.id)}" aria-label="${p.nome}">
+      <a class="planet-thumb" href="${hrefPlaneta(p.id)}" aria-label="${p.nome}">
         <img src="${p.imagem}" alt="${p.alt}">
         <span class="badge planet-type planet-type-overlay" tabindex="0" role="button" aria-label="${p.tipo}">${p.tipo}</span>
         <span class="planet-name-overlay" aria-hidden="true">${p.nome}</span>

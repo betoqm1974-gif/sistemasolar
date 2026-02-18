@@ -1,4 +1,4 @@
-(function(){
+// (function(){
   const L=document.getElementById("backToTopLeft");
   const R=document.getElementById("backToTopRight");
   function go(){ window.scrollTo({top:0, behavior:"smooth"}); }

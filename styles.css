@@ -317,7 +317,7 @@ header{position:relative}
 
 /* Multimédia: cartões mais largos e com texto afastado das margens */
 .wide-card{
-  border:1px solid rgba(255,255,255,.14);
+  border: 1px solid rgba(255,255,255,.10);
   border-radius:16px;
   background: rgba(10,12,20,.35);
   overflow:hidden;
@@ -493,7 +493,6 @@ li{line-height:1.6;}
 .main-nav a:hover, .main-nav a:focus-visible{
   background: rgba(255,255,255,.08);
   border-color: rgba(255,255,255,.18);
-  box-shadow: 0 0 0 2px rgba(255,255,255,.10);
   transform: translateY(-1px);
   outline: none;
 }
@@ -1016,8 +1015,7 @@ body{ overflow-x: hidden; }
   background:#111;
   color:#fff;
   text-decoration:none;
-  box-shadow:0 8px 18px rgba(0,0,0,.25);
-}
+  }
 .skip-link:focus,
 .skip-link:focus-visible{
   left:10px;
@@ -1425,8 +1423,8 @@ nav a:hover, nav a:focus-visible,
   position: relative;
   border-radius: 14px;
   overflow: hidden;
-  border: 1px solid rgba(255,255,255,0.08);
-}
+  border: 1px solid rgba(255,255,255,.10);
+  }
 .video-thumb img{
   width:100%;
   height:auto;
@@ -2369,7 +2367,7 @@ input[type="reset"],
 .btn-audiodescricao,
 .btn-close,
 .btn-topo{
-  border: 2px solid #ffffff !important;
+  border: 1px solid rgba(255,255,255,.10) !important;
 }
 
 /* FIX_FONT_SIZE_GAP_AAA: mais espaço entre os botões A / AA / AAA */
@@ -2512,7 +2510,7 @@ input[type="reset"],
   background:#000;
   color:#fff;
   font-weight:700;
-  border:2px solid #fff;
+  border: 1px solid rgba(255,255,255,.10);
   border-radius:6px;
   transform:translateY(-200%);
   z-index:9999;
@@ -2913,7 +2911,7 @@ button.has-tooltip-below::after{
   bottom: .75rem;
   padding: .35rem .6rem;
   border-radius: .6rem;
-  background: rgba(0,0,0,.55);
+  background: rgba(0,0,0,.45);
   color: #fff;
   font-weight: 800;
   letter-spacing: .02em;
@@ -3025,3 +3023,202 @@ button.has-tooltip-below::after{
 .facts .fact:focus-within::after{
   opacity: 1;
 }
+
+/* MULTIMÉDIA: efeito visual (igual ao Index/Planetas) na cor #FFB21D */
+.video-card,
+.photo-card,
+.media-card{
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+}
+.video-card::before,
+.photo-card::before,
+.media-card::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #FFB21D;
+  opacity: 0;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  transition: opacity .25s ease;
+}
+.video-card::after,
+.photo-card::after,
+.media-card::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 3px solid #FFB21D;
+  opacity: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  transition: opacity .25s ease;
+}
+.video-card:hover::before,
+.video-card:focus-within::before,
+.photo-card:hover::before,
+.photo-card:focus-within::before,
+.media-card:hover::before,
+.media-card:focus-within::before{
+  opacity: .22;
+}
+.video-card:hover::after,
+.video-card:focus-within::after,
+.photo-card:hover::after,
+.photo-card:focus-within::after,
+.media-card:hover::after,
+.media-card:focus-within::after{
+  opacity: 1;
+}
+.video-card:hover img,
+.photo-card:hover img,
+.media-card:hover img,
+.video-card:focus-within img,
+.photo-card:focus-within img,
+.media-card:focus-within img{
+  filter: saturate(1.15) contrast(1.05);
+}
+
+/* MULTIMÉDIA (Fotos): remover retângulo semi-transparente e usar apenas "remango" (moldura) no nome */
+.photo-card{
+  position: relative;
+}
+/* remove o retângulo/overlay antigo por baixo do nome */
+.photo-card figcaption.card-pad::before{
+  display: none !important;
+}
+/* coloca o nome por cima da imagem (como nos Planetas) */
+.photo-card figcaption.card-pad{
+  position: absolute;
+  left: 1.35rem;
+  bottom: 1.35rem;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  z-index: 5;
+}
+.photo-card figcaption.card-pad strong{
+  display: inline-block;
+  padding: .55rem 1rem;
+  border-radius: 999px;
+  border: none;
+  background: rgba(0,0,0,.62);
+  color: #fff;
+  font-weight: 800;
+  letter-spacing: .02em;
+  text-transform: uppercase;
+  line-height: 1;
+  }
+/* se existir texto adicional no figcaption, esconde (ficamos só com o nome) */
+.photo-card figcaption.card-pad p,
+.photo-card figcaption.card-pad .small,
+.photo-card figcaption.card-pad a.btn{
+  display: none !important;
+}
+
+/* MULTIMÉDIA (Fotos): nome mais acima e mais à direita (pill) */
+.multimedia .photo-card figcaption.card-pad,
+.multimedia figure.photo-card figcaption.card-pad,
+.multimedia .media-card figcaption.card-pad,
+.multimedia figure.media-card figcaption.card-pad{
+  left: 2.1rem !important;
+  bottom: 2.1rem !important;
+}
+
+/* UI (global): linha branca fina nos botões (estado normal) */
+:where(button, .btn, a.btn, input[type="button"], input[type="submit"], input[type="reset"]){
+  border: 1px solid rgba(255,255,255,.85) !important;
+}
+/* evita mexer no botão Fechar do modal se ele for desenhado sem borda */
+button.modal-close{
+  border-color: rgba(255,255,255,.35) !important;
+}
+
+
+/* MERCÚRIO: página independente com moldura + conteúdo */
+.planet-hero{
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 18px 16px 10px;
+}
+.planet-title{
+  margin: 0 0 26px;
+  font-weight: 900;
+  letter-spacing: .3px;
+  text-transform: none;
+  font-size: 1.75rem;
+}
+.planet-frame{
+  margin: 0;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.10);
+  box-shadow: 0 10px 30px rgba(0,0,0,.35);
+}
+.planet-frame img{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.planet-sections{
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 12px 16px 28px;
+}
+.planet-sections h2{
+  margin: 18px 0 8px;
+  font-size: 1.2rem;
+}
+.planet-sections ul{
+  margin: 0 0 6px 1.1rem;
+}
+.planet-sections li{
+  margin: 6px 0;
+  line-height: 1.5;
+}
+
+.planet-title{
+  text-transform: none; /* só a primeira letra maiúscula */
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+.planet-sections ul{ list-style-type: square; }
+
+/* MERCÚRIO: ajustes finais (título, bullets quadrados, imagem menor) */
+.planet-title{
+  font-size: 1.75rem !important; /* igual ao "Sistema Solar" do header */
+  line-height: 1.1 !important;
+  margin: 0 0 26px !important;
+  text-transform: none !important;
+}
+z0px; /* ~30% menor do que 860px */
+}
+.planet-sections ul{
+  list-style: square !important;
+  list-style-position: outside !important;
+  padding-left: 1.25rem !important;
+  margin-left: 0 !important;
+}
+.planet-sections li{
+  display: list-item !important;
+}
+
+/* MERCÚRIO: força a imagem ~10% menor e centrada */
+.planet-frame{
+  max-width: 685px !important;
+  margin: 0 auto !important;
+}
+.planet-frame img{
+  width: 100% !important;
+  height: auto !important;
+  display: block;
+}
+
+
+/* Mercúrio: imagem +5% */
+.page-mercurio .planet-frame{ max-width: 683px !important; }
+
+
+/* desativar voltar ao topo (removido) */
+.back-to-top,.to-top,.btn-top,.scroll-top,#backToTop,#btnTop,#topBtn,#toTop{display:none !important;}

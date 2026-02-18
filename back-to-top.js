@@ -1,4 +1,4 @@
-
+// 
 (function(){
   const btn = document.getElementById("backToTop");
   if(!btn) return;

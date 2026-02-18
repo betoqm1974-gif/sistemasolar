@@ -1,4 +1,4 @@
-(function(){
+// (function(){
   // Botões "Ler" (voz): comportamento normal em todas as páginas.
   // Na Home (index.html): apenas botões nos títulos; ao clicar lê o título + parágrafos/itens da secção.
   // Curiosidades (Home): 1 botão por curiosidade (alinhado à direita) que lê o título+texto da curiosidade.
